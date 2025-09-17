@@ -119,8 +119,19 @@
       <p class="subtitle">A single‑purpose page to keep you focused on the next GPA milestone.</p>
 
       <div class="countdown-wrap">
-        <div class="embed-holder">
-          <iframe width="300" height="154" src="https://w2.countingdownto.com/6572001" frameborder="0"></iframe>
+        <div class="embed-holder" aria-live="polite">
+          <!-- Native countdown (no watermark) -->
+          <div id="nativeCountdown" style="display:grid; gap:14px; width:100%; max-width:520px">
+            <div style="text-align:center; color:#9ad3b0; font-family:'JetBrains Mono', monospace; font-size:14px">
+              Target: 21 Sep 2025, 8:20 PM (Asia/Singapore)
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:12px;">
+              <div class="stat"><div class="kpi" id="dDD">--</div><div class="label">days</div></div>
+              <div class="stat"><div class="kpi" id="dHH">--</div><div class="label">hours</div></div>
+              <div class="stat"><div class="kpi" id="dMM">--</div><div class="label">minutes</div></div>
+              <div class="stat"><div class="kpi" id="dSS">--</div><div class="label">seconds</div></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -142,5 +153,44 @@
       </a>
     </div>
   </footer>
+
+  <script>
+    // Native countdown to 21 Sep 2025 20:20 Asia/Singapore (UTC+08:00)
+    const target = new Date('2025-09-21T20:20:00+08:00').getTime();
+
+    function pad(n){ return String(n).padStart(2,'0'); }
+
+    function tick(){
+      const now = Date.now();
+      let diff = Math.max(0, target - now);
+
+      const d = Math.floor(diff / (1000*60*60*24));
+      diff -= d * 24*60*60*1000;
+      const h = Math.floor(diff / (1000*60*60));
+      diff -= h * 60*60*1000;
+      const m = Math.floor(diff / (1000*60));
+      diff -= m * 60*1000;
+      const s = Math.floor(diff / 1000);
+
+      const elD = document.getElementById('dDD');
+      const elH = document.getElementById('dHH');
+      const elM = document.getElementById('dMM');
+      const elS = document.getElementById('dSS');
+      if(!elD) return; // safety if DOM not ready
+
+      elD.textContent = d;
+      elH.textContent = pad(h);
+      elM.textContent = pad(m);
+      elS.textContent = pad(s);
+
+      if (target - now <= 0) {
+        document.getElementById('nativeCountdown').innerHTML = '<div style="text-align:center; font-weight:800; font-size:22px">Time\'s up. Go crush it.</div>';
+        clearInterval(intv);
+      }
+    }
+
+    const intv = setInterval(tick, 1000);
+    tick();
+  </script>
 </body>
 </html>
