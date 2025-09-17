@@ -55,7 +55,7 @@
       background: linear-gradient(180deg, rgba(7,12,15,.85), rgba(7,12,15,.35));
       border-bottom: 1px solid rgba(39,239,150,.18);
     }
-    .container{ max-width: 1100px; margin:0 auto; padding: 20px; }
+    .container{ max-width: 800px; margin:0 auto; padding: 20px; }
     .topbar{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
     .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text); }
     .logo{
@@ -74,7 +74,7 @@
       box-shadow: var(--shadow);
     }
 
-    .hero{ padding: 48px 20px 26px; text-align:center; }
+    .hero{ padding: 60px 20px 40px; text-align:center; }
     .eyebrow{ color: var(--muted); font-family: "JetBrains Mono", monospace; letter-spacing:.2px; font-size:13px; }
     .title{ font-size: clamp(28px, 5vw, 56px); margin: 8px auto 10px; font-weight:800; line-height:1.05; }
     .glitch{ position:relative; display:inline-block; }
@@ -82,39 +82,12 @@
     .glitch::before{ transform: translate(1px, -1px); color: var(--accent2); animation: flicker 3.2s linear infinite; }
     .glitch::after{ transform: translate(-1px, 1px); color: var(--accent); animation: flicker 2.8s linear infinite reverse; }
     @keyframes flicker{ 0%,100%{opacity:.15} 50%{opacity:.5} 80%{opacity:.25} }
-    .subtitle{ max-width: 760px; margin: 0 auto; line-height:1.6; color: #c8e9d5; }
+    .subtitle{ max-width: 600px; margin: 0 auto; line-height:1.6; color: #c8e9d5; }
 
-    .grid{ display:grid; grid-template-columns: 1.2fr .8fr; gap: 22px; align-items:stretch; padding: 20px; }
-    @media (max-width: 900px){ .grid{ grid-template-columns: 1fr; } }
+    .countdown-wrap{ position:relative; border-radius: 16px; padding: 14px; background: #07110e; border:1px solid rgba(39,239,150,.28); box-shadow: inset 0 0 0 1px rgba(0,225,255,.15), 0 0 30px rgba(39,239,150,.12); margin-top:40px; }
+    .embed-holder{ width:100%; display:grid; place-items:center; }
+    .embed-holder iframe{ width:100%; max-width:400px; height:200px; border:0; border-radius:12px; }
 
-    .card{ background: linear-gradient(180deg, rgba(9,15,13,.8), rgba(6,10,9,.7)); border: 1px solid rgba(39,239,150,.18); border-radius: var(--radius); box-shadow: var(--shadow); overflow:hidden; }
-    .card-header{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 18px; border-bottom: 1px solid rgba(39,239,150,.16); }
-    .card-header h2{ margin:0; font-size:16px; letter-spacing:.4px; font-weight:800; }
-    .pill{ border: 1px solid rgba(0,225,255,.3); color:#b9eef4; padding:6px 10px; border-radius:999px; font-size:12px; font-family: "JetBrains Mono", monospace; }
-    .panel{ padding: 18px; }
-
-    /* Countdown embed wrapper with neon border */
-    .countdown-wrap{ position:relative; border-radius: 16px; padding: 14px; background: #07110e; border:1px solid rgba(39,239,150,.28); box-shadow: inset 0 0 0 1px rgba(0,225,255,.15), 0 0 30px rgba(39,239,150,.12); }
-    .countdown-wrap::before{ content:""; position:absolute; inset:-2px; border-radius: 18px; pointer-events:none; background: conic-gradient(from 180deg, rgba(39,239,150,.0), rgba(39,239,150,.45), rgba(0,225,255,.4), rgba(39,239,150,.0)); filter: blur(10px); opacity:.55; }
-    .embed-holder{ width:100%; max-width: 820px; margin: 0 auto; display:grid; place-items:center; }
-    .embed-holder iframe{ width:100%; height: 220px; border:0; border-radius:12px; }
-
-    /* Stats widgets */
-    .stats{ display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px; }
-    @media (max-width: 520px){ .stats{ grid-template-columns:1fr; } }
-    .stat{ background: linear-gradient(180deg, #0a1410, #0a0f0d); border:1px solid rgba(0,225,255,.18); border-radius: 14px; padding:14px 16px; }
-    .kpi{ font: 700 28px "JetBrains Mono", monospace; letter-spacing:.5px; }
-    .label{ color:#a7d7c2; font: 12px "JetBrains Mono", monospace; letter-spacing:.4px; }
-    .progress{ height:10px; background:#0b1e19; border:1px solid rgba(39,239,150,.2); border-radius:999px; margin-top:10px; overflow:hidden; }
-    .bar{ height:100%; width: 62%; background: linear-gradient(90deg, var(--accent), var(--accent2)); box-shadow: 0 0 16px rgba(0,225,255,.25) inset; }
-
-    /* Tips list */
-    .list{ display:grid; gap:12px; }
-    .list-item{ display:flex; gap:10px; align-items:flex-start; }
-    .badge{ flex:0 0 28px; height:28px; border-radius:8px; display:grid; place-items:center; font:700 13px "JetBrains Mono", monospace; color:#00140b; background: linear-gradient(90deg, var(--accent), var(--accent2)); box-shadow: var(--shadow); }
-    .item-text{ line-height:1.55; color:#d6f1e2; }
-
-    /* Footer / author */
     footer{ padding: 30px 20px 50px; color:#b8ecd7; }
     .footer-card{ background: linear-gradient(180deg, rgba(9,15,13,.8), rgba(6,10,9,.7)); border: 1px solid rgba(39,239,150,.18); border-radius: 16px; padding: 18px; display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
     .author{ display:flex; align-items:center; gap:14px; }
@@ -135,60 +108,21 @@
         <div class="logo">SOC</div>
         <h1>GPA Countdown</h1>
       </a>
-      <span class="chip">Security • Ops • Readiness</span>
+      <span class="chip">Cybersecurity Theme</span>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <div class="eyebrow">School of Computing • Cybersecurity theme</div>
+      <div class="eyebrow">School of Computing</div>
       <h2 class="title"><span class="glitch" data-text="Stay Ready. Ship A Grades.">Stay Ready. Ship A Grades.</span></h2>
-      <p class="subtitle">A single‑purpose page to keep you focused on the next GPA milestone. Minimal distractions. Subtle cyber vibes. Pairs nicely with SOC study sprints.</p>
-    </section>
+      <p class="subtitle">A single‑purpose page to keep you focused on the next GPA milestone.</p>
 
-    <section class="grid">
-      <!-- Left: Countdown + stats -->
-      <article class="card">
-        <div class="card-header">
-          <h2>Milestone Countdown</h2>
-          <span class="pill">live</span>
+      <div class="countdown-wrap">
+        <div class="embed-holder">
+          <iframe width="300" height="154" src="https://w2.countingdownto.com/6572001" frameborder="0"></iframe>
         </div>
-        <div class="panel">
-          <div class="countdown-wrap">
-            <div class="embed-holder">
-              <!-- Your embedded counter -->
-              <iframe width="300" height="154" src="https://w2.countingdownto.com/6572001" frameborder="0"></iframe>
-            </div>
-          </div>
-          <div class="stats" style="margin-top:16px">
-            <div class="stat">
-              <div class="kpi" id="daysLeft">--</div>
-              <div class="label">days remaining</div>
-              <div class="progress"><div class="bar" id="progressBar"></div></div>
-            </div>
-            <div class="stat">
-              <div class="kpi" id="focusBlocks">--</div>
-              <div class="label">45‑min focus blocks left</div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Right: Study tips / notes -->
-      <aside class="card">
-        <div class="card-header">
-          <h2>Ops Notes</h2>
-          <span class="pill">playbook</span>
-        </div>
-        <div class="panel">
-          <div class="list">
-            <div class="list-item"><div class="badge">01</div><div class="item-text"><strong>Patch your plan:</strong> pick two high‑impact modules for deep work; queue low‑effort tasks after.</div></div>
-            <div class="list-item"><div class="badge">02</div><div class="item-text"><strong>Reduce attack surface:</strong> phone on Do Not Disturb; block distracting domains during sprints.</div></div>
-            <div class="list-item"><div class="badge">03</div><div class="item-text"><strong>Telemetry:</strong> log study start/stop times; review daily for weak points.</div></div>
-            <div class="list-item"><div class="badge">04</div><div class="item-text"><strong>Rotate keys:</strong> switch topics every 90 minutes to avoid cognitive fatigue.</div></div>
-          </div>
-        </div>
-      </aside>
+      </div>
     </section>
   </main>
 
@@ -208,33 +142,5 @@
       </a>
     </div>
   </footer>
-
-  <script>
-    // Optional: lightweight derived stats
-    // Configure your target date (ISO 8601). This should match your countdown target.
-    // Example: 2025-12-01T00:00:00+08:00
-    const targetISO = '2025-12-01T00:00:00+08:00'; // TODO: update
-    const startISO  = '2025-09-01T00:00:00+08:00'; // start of term for progress bar
-
-    function diffDays(a, b){
-      const ms = new Date(b) - new Date(a);
-      return Math.max(0, Math.ceil(ms / (1000*60*60*24)));
-    }
-
-    function updateKpis(){
-      const now = new Date();
-      const days = diffDays(now, targetISO);
-      document.getElementById('daysLeft').textContent = days;
-      document.getElementById('focusBlocks').textContent = (days*24*60/45)|0; // approx number of 45‑min blocks
-
-      const total = diffDays(startISO, targetISO) || 1;
-      const elapsed = Math.max(0, Math.min(total, diffDays(startISO, now)));
-      const pct = Math.round((elapsed/total)*100);
-      document.getElementById('progressBar').style.width = pct + '%';
-    }
-
-    updateKpis();
-    setInterval(updateKpis, 60*1000);
-  </script>
 </body>
 </html>
