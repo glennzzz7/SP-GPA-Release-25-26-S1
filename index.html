@@ -1,16 +1,13 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Semester GPA Countdown</title>
-  <meta name="description" content="A calm and motivating semester GPA countdown" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="description" content="A calm and motivating semester GPA countdown" />  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">  <style>
     :root{
       --bg: #080511;
       --bg2: #120a24;
@@ -365,13 +362,157 @@
     a{ color: var(--accent3); }
 
     @media (max-width: 720px){
-      .topbar{ flex-direction:column; align-items:flex-start; }
+      .container{ padding:16px; }
+      .topbar{
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+        gap:10px;
+      }
+      .brand{ min-width:0; gap:10px; }
+      .logo{
+        width:40px;
+        height:40px;
+        border-radius:12px;
+        flex:0 0 40px;
+      }
+      .brand h1{
+        font-size:16px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+      .chip{
+        font-size:10px;
+        padding:8px 10px;
+        letter-spacing:.5px;
+        flex:0 0 auto;
+      }
+      .hero{
+        padding:40px 4px 28px;
+      }
+      .eyebrow{
+        font-size:11px;
+        letter-spacing:.18em;
+      }
+      .title{
+        font-size:clamp(34px, 10vw, 50px);
+        line-height:1.04;
+        margin:14px auto 12px;
+      }
+      .subtitle{
+        font-size:15px;
+        line-height:1.65;
+        max-width:100%;
+      }
+      .hero-badges{
+        gap:8px;
+        margin-top:18px;
+      }
+      .mini-chip{
+        font-size:11px;
+        padding:7px 10px;
+      }
+      .countdown-wrap{
+        margin-top:28px;
+        padding:16px;
+        border-radius:22px;
+      }
+      .target-text{
+        font-size:12px;
+        line-height:1.5;
+        margin-bottom:12px;
+      }
+      .count-grid{
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap:10px;
+        max-width:100%;
+      }
+      .stat{
+        border-radius:16px;
+        padding:16px 10px;
+      }
+      .kpi{
+        font-size:clamp(22px, 8vw, 34px);
+        margin-bottom:4px;
+      }
+      .label{
+        font-size:11px;
+        letter-spacing:.12em;
+      }
+      .support-card{
+        margin-top:16px;
+        padding:16px;
+        border-radius:16px;
+        align-items:flex-start;
+      }
+      .support-copy h3{
+        font-size:16px;
+      }
+      .support-copy p{
+        font-size:13px;
+      }
+      .btn{
+        width:100%;
+        justify-content:center;
+      }
+      .footer-card{
+        padding:16px;
+        border-radius:18px;
+        align-items:flex-start;
+      }
+      .author{
+        width:100%;
+        align-items:center;
+      }
+    }
+
+    @media (max-width: 420px){
+      .container{ padding:14px; }
+      .topbar{
+        gap:8px;
+      }
+      .brand h1{
+        font-size:15px;
+      }
+      .chip{
+        font-size:9px;
+        padding:7px 9px;
+      }
+      .hero{
+        padding-top:34px;
+      }
+      .title{
+        font-size:clamp(30px, 11vw, 42px);
+      }
+      .subtitle{
+        font-size:14px;
+      }
+      .count-grid{
+        gap:8px;
+      }
+      .stat{
+        padding:14px 8px;
+      }
+      .kpi{
+        font-size:clamp(20px, 9vw, 28px);
+      }
+      .avatar{
+        width:46px;
+        height:46px;
+      }
+      .author h3{
+        font-size:15px;
+      }
+      .author p{
+        font-size:12px;
+      }
+    }
       .count-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
       .hero{ padding-top: 54px; }
       .support-card{ align-items:flex-start; }
     }
-  </style>
-</head>
+  </style></head>
 <body class="grid-bg">
   <header>
     <div class="container topbar">
@@ -381,45 +522,40 @@
       </a>
       <span class="chip">Semester Progress</span>
     </div>
-  </header>
-
-  <main class="container">
+  </header>  <main class="container">
     <section class="hero">
       <div class="eyebrow">A calm space for the semester ahead</div>
       <h2 class="title"><span class="glow-text">Steady progress, clear focus, and one step at a time.</span></h2>
-      <p class="subtitle">A simple countdown to help you stay grounded through the semester. Keep your pace, do the work well, and let each day move you a little closer to where you want to be.</p>
+      <p class="subtitle">A simple countdown to help you stay grounded through the semester. Keep your pace, do the work well, and let each day move you a little closer to where you want to be.</p><div class="hero-badges">
+    <span class="mini-chip">Semester Countdown</span>
+    <span class="mini-chip">Keep Going</span>
+    <span class="mini-chip">One Day at a Time</span>
+  </div>
 
-      <div class="hero-badges">
-        <span class="mini-chip">Semester Countdown</span>
-        <span class="mini-chip">Keep Going</span>
-        <span class="mini-chip">One Day at a Time</span>
-      </div>
-
-      <div class="countdown-wrap">
-        <div class="embed-holder" aria-live="polite">
-          <div id="nativeCountdown" style="display:grid; gap:14px; width:100%; max-width:640px;">
-            <div class="target-text">Target: 23 Mar 2026, 8:10 PM (Asia/Singapore)</div>
-            <div class="count-grid">
-              <div class="stat"><div class="kpi" id="dDD">--</div><div class="label">Days</div></div>
-              <div class="stat"><div class="kpi" id="dHH">--</div><div class="label">Hours</div></div>
-              <div class="stat"><div class="kpi" id="dMM">--</div><div class="label">Minutes</div></div>
-              <div class="stat"><div class="kpi" id="dSS">--</div><div class="label">Seconds</div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="support-card">
-          <div class="support-copy">
-            <h3>Want to estimate your GPA?</h3>
-            <p>Use the calculator to explore different grade combinations and see how they could shape your overall result.</p>
-          </div>
-          <a href="https://www.plsgrade.me/?auto=true&mode=projection&modules=module-1%3A%3A%3A" target="_blank" rel="noopener" class="btn">Open GPA Calculator</a>
+  <div class="countdown-wrap">
+    <div class="embed-holder" aria-live="polite">
+      <div id="nativeCountdown" style="display:grid; gap:14px; width:100%; max-width:640px;">
+        <div class="target-text">Target: 23 Mar 2026, 8:10 PM (Asia/Singapore)</div>
+        <div class="count-grid">
+          <div class="stat"><div class="kpi" id="dDD">--</div><div class="label">Days</div></div>
+          <div class="stat"><div class="kpi" id="dHH">--</div><div class="label">Hours</div></div>
+          <div class="stat"><div class="kpi" id="dMM">--</div><div class="label">Minutes</div></div>
+          <div class="stat"><div class="kpi" id="dSS">--</div><div class="label">Seconds</div></div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <footer class="container">
+    <div class="support-card">
+      <div class="support-copy">
+        <h3>Want to estimate your GPA?</h3>
+        <p>Use the calculator to explore different grade combinations and see how they could shape your overall result.</p>
+      </div>
+      <a href="https://www.plsgrade.me/?auto=true&mode=projection&modules=module-1%3A%3A%3A" target="_blank" rel="noopener" class="btn">Open GPA Calculator</a>
+    </div>
+  </div>
+</section>
+
+  </main>  <footer class="container">
     <div class="footer-card">
       <div class="author">
         <div class="avatar" aria-hidden="true"></div>
@@ -433,9 +569,7 @@
         Connect on LinkedIn
       </a>
     </div>
-  </footer>
-
-  <script>
+  </footer>  <script>
     // Native countdown to 23 Mar 2026 20:10 Asia/Singapore (UTC+08:00)
     const target = new Date('2026-03-23T20:10:00+08:00').getTime();
 
@@ -472,6 +606,5 @@
 
     const intv = setInterval(tick, 1000);
     tick();
-  </script>
-</body>
+  </script></body>
 </html>
