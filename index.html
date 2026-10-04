@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Semester GPA Countdown</title>
-  <meta name="description" content="A responsive semester GPA countdown with themes and mini brain games" />
+
+  <title>Internship Countdown | Glenn Chua</title>
+  <meta
+    name="description"
+    content="A personal countdown to the end of Glenn Chua's internship, with themes and mini brain games."
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,8 +80,15 @@
       --card-glow:rgba(255,123,84,.10);
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ margin:0; min-height:100%; }
+    *{
+      box-sizing:border-box;
+    }
+
+    html,body{
+      margin:0;
+      min-height:100%;
+    }
+
     body{
       color:var(--text);
       background:
@@ -230,12 +241,17 @@
       font-size:clamp(2.4rem, 8vw, 4.6rem);
       font-weight:900;
       line-height:1.02;
-      max-width:12ch;
+      max-width:13ch;
       text-wrap:balance;
     }
 
     .glow-text{
-      background:linear-gradient(90deg, #ffffff 0%, color-mix(in srgb, var(--accent2) 30%, white) 38%, color-mix(in srgb, var(--accent3) 45%, white) 100%);
+      background:linear-gradient(
+        90deg,
+        #ffffff 0%,
+        color-mix(in srgb, var(--accent2) 30%, white) 38%,
+        color-mix(in srgb, var(--accent3) 45%, white) 100%
+      );
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
@@ -294,7 +310,12 @@
       inset:-1px;
       border-radius:inherit;
       padding:1px;
-      background:linear-gradient(135deg, color-mix(in srgb, var(--accent) 80%, white), color-mix(in srgb, var(--accent3) 55%, white), color-mix(in srgb, var(--accent2) 70%, white));
+      background:linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--accent) 80%, white),
+        color-mix(in srgb, var(--accent3) 55%, white),
+        color-mix(in srgb, var(--accent2) 70%, white)
+      );
       -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
       -webkit-mask-composite:xor;
       mask-composite:exclude;
@@ -340,7 +361,9 @@
       padding:20px 10px;
       text-align:center;
       backdrop-filter:blur(10px);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,.02), 0 0 30px var(--card-glow);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.02),
+        0 0 30px var(--card-glow);
     }
 
     .kpi{
@@ -390,6 +413,32 @@
       font-size:14px;
     }
 
+    .progress-bar{
+      width:100%;
+      height:12px;
+      margin-top:14px;
+      overflow:hidden;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .progress-fill{
+      height:100%;
+      width:0%;
+      border-radius:999px;
+      background:linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+      box-shadow:0 0 20px color-mix(in srgb, var(--accent) 35%, transparent);
+      transition:width .5s ease;
+    }
+
+    .progress-text{
+      margin-top:9px;
+      color:var(--muted);
+      font-family:"JetBrains Mono", monospace;
+      font-size:12px;
+    }
+
     .btn,
     .small-btn{
       display:inline-flex;
@@ -399,7 +448,11 @@
       padding:12px 16px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.12);
-      background:linear-gradient(135deg, color-mix(in srgb, var(--accent) 18%, transparent), color-mix(in srgb, var(--accent2) 18%, transparent));
+      background:linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--accent) 18%, transparent),
+        color-mix(in srgb, var(--accent2) 18%, transparent)
+      );
       color:var(--text);
       text-decoration:none;
       font-weight:800;
@@ -422,7 +475,10 @@
       box-shadow:0 20px 36px color-mix(in srgb, var(--accent) 24%, transparent);
     }
 
-    .btn svg{ width:18px; height:18px; }
+    .btn svg{
+      width:18px;
+      height:18px;
+    }
 
     .games-section{
       position:relative;
@@ -503,12 +559,24 @@
       border:1px solid rgba(255,255,255,.08);
       background:rgba(255,255,255,.04);
       user-select:none;
+      cursor:pointer;
     }
 
-    .reaction-box.ready{ background:rgba(255,255,255,.04); }
-    .reaction-box.wait{ background:rgba(255, 209, 102, .18); }
-    .reaction-box.go{ background:rgba(34, 197, 94, .26); }
-    .reaction-box.too-soon{ background:rgba(239, 68, 68, .24); }
+    .reaction-box.ready{
+      background:rgba(255,255,255,.04);
+    }
+
+    .reaction-box.wait{
+      background:rgba(255, 209, 102, .18);
+    }
+
+    .reaction-box.go{
+      background:rgba(34, 197, 94, .26);
+    }
+
+    .reaction-box.too-soon{
+      background:rgba(239, 68, 68, .24);
+    }
 
     .memory-sequence{
       font:800 28px "JetBrains Mono", monospace;
@@ -607,479 +675,1158 @@
       max-width:260px;
     }
 
-    a{ color:var(--accent3); }
+    a{
+      color:var(--accent3);
+    }
 
-    @media (max-width: 900px){
+    @media (max-width:900px){
       .games-grid{
         grid-template-columns:1fr;
       }
     }
 
-    @media (max-width: 720px){
+    @media (max-width:720px){
       .container{
         width:min(100% - 16px, 980px);
       }
+
       .topbar{
         gap:8px;
         padding:12px 0;
         align-items:flex-start;
       }
+
       .topbar-right{
         width:100%;
         justify-content:flex-start;
       }
+
       .logo{
         width:38px;
         height:38px;
         flex-basis:38px;
         border-radius:12px;
       }
+
       .brand h1{
         font-size:15px;
       }
+
       .chip,
       .theme-select{
         font-size:9px;
         padding:8px 9px;
         letter-spacing:.05em;
       }
+
       .hero{
         padding:30px 0 22px;
       }
+
       .eyebrow{
         font-size:10px;
         letter-spacing:.13em;
       }
+
       .title{
         max-width:100%;
         font-size:clamp(2.35rem, 11vw, 4rem);
       }
+
       .subtitle{
         font-size:15px;
         max-width:100%;
       }
+
       .mini-chip{
         font-size:10px;
         padding:8px 10px;
       }
+
       .countdown-wrap,
       .games-section{
         padding:14px;
         border-radius:22px;
       }
+
       .target-text{
         font-size:11px;
         line-height:1.5;
       }
+
       .count-grid{
         grid-template-columns:repeat(2, minmax(0, 1fr));
         gap:10px;
       }
+
       .stat{
         padding:18px 10px;
         border-radius:16px;
       }
+
       .kpi{
         font-size:clamp(2rem, 8.6vw, 2.8rem);
       }
+
       .label{
         font-size:10px;
       }
+
       .support-card{
         padding:14px;
       }
+
       .support-copy h3{
         font-size:16px;
       }
+
       .support-copy p,
       .section-subtitle,
       .game-card p{
         font-size:13px;
       }
+
       .btn,
       .linkedin-btn,
       .small-btn{
         width:100%;
         max-width:none;
       }
+
       .footer-card{
         padding:14px;
         border-radius:18px;
       }
     }
 
-    @media (max-width: 420px){
+    @media (max-width:420px){
       .container{
         width:min(100% - 12px, 980px);
       }
+
       .topbar{
         gap:6px;
       }
+
       .brand h1{
         font-size:14px;
       }
+
       .chip,
       .theme-select{
         font-size:8px;
         padding:7px 8px;
       }
+
       .hero{
         padding-top:26px;
       }
+
       .title{
         font-size:clamp(2.2rem, 12.5vw, 3.2rem);
       }
+
       .subtitle{
         font-size:14px;
       }
+
       .hero-badges{
         gap:8px;
       }
+
       .mini-chip{
         width:100%;
         text-align:center;
       }
+
       .count-grid{
         grid-template-columns:1fr;
       }
+
       .stat{
         padding:18px 10px;
       }
+
       .kpi{
         font-size:2.2rem;
       }
+
       .games-header{
         margin-bottom:12px;
       }
+
       .author h3{
         font-size:15px;
       }
+
       .author p{
         font-size:12px;
       }
     }
   </style>
 </head>
+
 <body class="grid-bg theme-neon">
+
   <header>
     <div class="container topbar">
-      <a class="brand" href="#" aria-label="Home">
-        <div class="logo">SOC</div>
-        <h1>GPA Countdown</h1>
+
+      <a class="brand" href="#" aria-label="Internship Countdown Home">
+        <div class="logo">NCS</div>
+        <h1>Internship Countdown</h1>
       </a>
+
       <div class="topbar-right">
-        <span class="chip">Semester Progress</span>
+        <span class="chip">Final Stretch</span>
+
         <select id="themeSelect" class="theme-select" aria-label="Choose theme">
           <option value="theme-neon">Neon</option>
           <option value="theme-midnight">Midnight</option>
           <option value="theme-sunset">Sunset</option>
         </select>
       </div>
+
     </div>
   </header>
 
   <main class="container">
+
     <section class="hero">
-      <div class="eyebrow">A calm space for the semester ahead</div>
-      <h2 class="title"><span class="glow-text">Steady progress, clear focus, and one step at a time.</span></h2>
-      <p class="subtitle">A simple countdown to help you stay grounded through the semester. Keep your pace, do the work well, and let each day move you a little closer to where you want to be.</p>
+
+      <div class="eyebrow">The final stretch of the journey</div>
+
+      <h2 class="title">
+        <span class="glow-text">
+          Counting down to the end of internship.
+        </span>
+      </h2>
+
+      <p class="subtitle">
+        Every site survey, deployment, troubleshooting session, document,
+        lesson and long day has been part of the journey. Keep learning,
+        keep improving, and make the remaining days count.
+      </p>
 
       <div class="hero-badges">
-        <span class="mini-chip">Semester Countdown</span>
-        <span class="mini-chip">Keep Going</span>
-        <span class="mini-chip">One Day at a Time</span>
+        <span class="mini-chip">Internship Countdown</span>
+        <span class="mini-chip">Keep Learning</span>
+        <span class="mini-chip">Finish Strong</span>
       </div>
 
       <div class="countdown-wrap">
+
         <div class="embed-holder" aria-live="polite">
+
           <div id="nativeCountdown">
-            <div class="target-text">Target: 22 Mar 2026, 8:10 PM (Asia/Singapore)</div>
-            <div class="count-grid">
-              <div class="stat"><div class="kpi" id="dDD">--</div><div class="label">Days</div></div>
-              <div class="stat"><div class="kpi" id="dHH">--</div><div class="label">Hours</div></div>
-              <div class="stat"><div class="kpi" id="dMM">--</div><div class="label">Minutes</div></div>
-              <div class="stat"><div class="kpi" id="dSS">--</div><div class="label">Seconds</div></div>
+
+            <div class="target-text">
+              Internship Ends · 31 January 2027 · 11:59 PM SGT
             </div>
+
+            <div class="count-grid">
+
+              <div class="stat">
+                <div class="kpi" id="dDD">--</div>
+                <div class="label">Days</div>
+              </div>
+
+              <div class="stat">
+                <div class="kpi" id="dHH">--</div>
+                <div class="label">Hours</div>
+              </div>
+
+              <div class="stat">
+                <div class="kpi" id="dMM">--</div>
+                <div class="label">Minutes</div>
+              </div>
+
+              <div class="stat">
+                <div class="kpi" id="dSS">--</div>
+                <div class="label">Seconds</div>
+              </div>
+
+            </div>
+
           </div>
+
         </div>
 
         <div class="support-card">
+
           <div class="support-copy">
-            <h3>Want to estimate your GPA?</h3>
-            <p>Use the calculator to explore different grade combinations and see how they could shape your overall result.</p>
+
+            <h3>Internship Progress</h3>
+
+            <p>
+              One day at a time. The finish line is getting closer.
+            </p>
+
+            <div class="progress-bar">
+              <div id="progressFill" class="progress-fill"></div>
+            </div>
+
+            <div id="progressText" class="progress-text">
+              Calculating internship progress...
+            </div>
+
           </div>
-          <a href="https://www.plsgrade.me/?auto=true&mode=projection&modules=module-1%3A%3A%3A" target="_blank" rel="noopener" class="btn">Open GPA Calculator</a>
+
         </div>
+
       </div>
 
       <section class="games-section section-card">
+
         <div class="games-header">
+
           <div>
-            <h3 class="section-title">Mini Brain Games</h3>
-            <p class="section-subtitle">Quick little games for a study break. Scores reset when the page reloads.</p>
+            <h3 class="section-title">Mini Brain Breaks</h3>
+
+            <p class="section-subtitle">
+              Need a quick break? Reset your brain before getting back to work.
+              Scores reset when the page reloads.
+            </p>
           </div>
+
         </div>
 
         <div class="games-grid">
+
+          <!-- REACTION TEST -->
           <article class="game-card">
+
             <div class="game-top">
               <h3>Reaction Test</h3>
               <span class="game-badge" id="reactionScore">Best: -- ms</span>
             </div>
-            <p>Tap as fast as you can when the box turns green.</p>
-            <div id="reactionBox" class="reaction-box ready">Press Start</div>
-            <div class="game-controls" style="margin-top:12px;">
-              <button id="reactionBtn" class="small-btn" type="button">Start Reaction Test</button>
+
+            <p>
+              Tap as fast as you can when the box turns green.
+            </p>
+
+            <div id="reactionBox" class="reaction-box ready">
+              Press Start
             </div>
+
+            <div class="game-controls" style="margin-top:12px;">
+              <button id="reactionBtn" class="small-btn" type="button">
+                Start Reaction Test
+              </button>
+            </div>
+
             <div id="reactionResult" class="game-result"></div>
+
           </article>
 
+
+          <!-- MEMORY GAME -->
           <article class="game-card">
+
             <div class="game-top">
               <h3>Memory Digits</h3>
               <span class="game-badge" id="memoryLevel">Level: 3</span>
             </div>
-            <p>Memorise the number, then type it back correctly.</p>
+
+            <p>
+              Memorise the number, then type it back correctly.
+            </p>
+
             <div class="game-stage">
               <div id="memoryDisplay" class="memory-sequence">---</div>
             </div>
+
             <div class="input-row">
-              <input id="memoryInput" class="game-input" type="text" inputmode="numeric" placeholder="Type the digits" />
-              <button id="memoryCheckBtn" class="small-btn" type="button">Check</button>
+
+              <input
+                id="memoryInput"
+                class="game-input"
+                type="text"
+                inputmode="numeric"
+                placeholder="Type the digits"
+              />
+
+              <button
+                id="memoryCheckBtn"
+                class="small-btn"
+                type="button"
+              >
+                Check
+              </button>
+
             </div>
+
             <div class="game-controls" style="margin-top:8px;">
-              <button id="memoryStartBtn" class="small-btn" type="button">New Sequence</button>
+
+              <button
+                id="memoryStartBtn"
+                class="small-btn"
+                type="button"
+              >
+                New Sequence
+              </button>
+
             </div>
+
             <div id="memoryResult" class="game-result"></div>
+
           </article>
 
+
+          <!-- MENTAL MATH -->
           <article class="game-card">
+
             <div class="game-top">
               <h3>Mental Math</h3>
               <span class="game-badge" id="mathScore">Score: 0</span>
             </div>
-            <p>Solve quick maths questions and build your streak.</p>
+
+            <p>
+              Solve quick maths questions and build your streak.
+            </p>
+
             <div class="game-stage">
-              <div id="mathQuestion" class="math-question">2 + 3</div>
+              <div id="mathQuestion" class="math-question">
+                2 + 3
+              </div>
             </div>
+
             <div class="input-row">
-              <input id="mathInput" class="game-input" type="number" placeholder="Answer" />
-              <button id="mathCheckBtn" class="small-btn" type="button">Submit</button>
+
+              <input
+                id="mathInput"
+                class="game-input"
+                type="number"
+                placeholder="Answer"
+              />
+
+              <button
+                id="mathCheckBtn"
+                class="small-btn"
+                type="button"
+              >
+                Submit
+              </button>
+
             </div>
+
             <div class="game-controls" style="margin-top:8px;">
-              <button id="mathNewBtn" class="small-btn" type="button">Next Question</button>
+
+              <button
+                id="mathNewBtn"
+                class="small-btn"
+                type="button"
+              >
+                Next Question
+              </button>
+
             </div>
+
             <div id="mathResult" class="game-result"></div>
+
           </article>
+
         </div>
+
       </section>
+
     </section>
+
   </main>
 
+
   <footer class="container">
+
     <div class="footer-card">
+
       <div class="author">
+
         <div class="avatar" aria-hidden="true"></div>
+
         <div>
-          <h3>About the author</h3>
-          <p>Glenn Chua, Year 2 Cybersecurity &amp; Digital Forensics student</p>
+          <h3>Glenn Chua</h3>
+
+          <p>
+            Network &amp; Security Intern · Cybersecurity &amp; Digital Forensics
+          </p>
         </div>
+
       </div>
-      <a class="btn linkedin-btn" href="https://www.linkedin.com/in/glennchuayunxi" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.8v2.11h.05c.53-1 1.83-2.11 3.77-2.11 4.03 0 4.78 2.65 4.78 6.09V24h-4v-7.3c0-1.74-.03-3.98-2.43-3.98-2.44 0-2.81 1.9-2.81 3.86V24h-4V8.5z"/></svg>
+
+      <a
+        class="btn linkedin-btn"
+        href="https://www.linkedin.com/in/glennchuayunxi"
+        target="_blank"
+        rel="noopener"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.8v2.11h.05c.53-1 1.83-2.11 3.77-2.11 4.03 0 4.78 2.65 4.78 6.09V24h-4v-7.3c0-1.74-.03-3.98-2.43-3.98-2.44 0-2.81 1.9-2.81 3.86V24h-4V8.5z"/>
+        </svg>
+
         Connect on LinkedIn
+
       </a>
+
     </div>
+
   </footer>
 
-  <script>
-    const target = new Date('2026-03-22T20:10:00+08:00').getTime();
 
-    function pad(n){ return String(n).padStart(2, '0'); }
+  <script>
+
+    /* =========================================================
+       INTERNSHIP DATES
+       ========================================================= */
+
+    const internshipStart =
+      new Date('2026-03-01T00:00:00+08:00').getTime();
+
+    const internshipEnd =
+      new Date('2027-01-31T23:59:59+08:00').getTime();
+
+    const target = internshipEnd;
+
+
+    /* =========================================================
+       COUNTDOWN
+       ========================================================= */
+
+    function pad(n){
+      return String(n).padStart(2, '0');
+    }
+
 
     function tick(){
+
       const now = Date.now();
+
       let diff = Math.max(0, target - now);
 
-      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const d =
+        Math.floor(diff / (1000 * 60 * 60 * 24));
+
       diff -= d * 24 * 60 * 60 * 1000;
-      const h = Math.floor(diff / (1000 * 60 * 60));
+
+      const h =
+        Math.floor(diff / (1000 * 60 * 60));
+
       diff -= h * 60 * 60 * 1000;
-      const m = Math.floor(diff / (1000 * 60));
+
+      const m =
+        Math.floor(diff / (1000 * 60));
+
       diff -= m * 60 * 1000;
-      const s = Math.floor(diff / 1000);
+
+      const s =
+        Math.floor(diff / 1000);
+
 
       const elD = document.getElementById('dDD');
       const elH = document.getElementById('dHH');
       const elM = document.getElementById('dMM');
       const elS = document.getElementById('dSS');
-      if(!elD || !elH || !elM || !elS) return;
+
+
+      if(!elD || !elH || !elM || !elS){
+        return;
+      }
+
 
       elD.textContent = d;
       elH.textContent = pad(h);
       elM.textContent = pad(m);
       elS.textContent = pad(s);
 
-      if (target - now <= 0) {
-        document.getElementById('nativeCountdown').innerHTML = '<div style="text-align:center; font-weight:900; font-size:24px; line-height:1.4;">Countdown complete.<br>You made it to the next chapter.</div>';
-        clearInterval(intv);
+
+      /* Internship progress */
+
+      const totalDuration =
+        internshipEnd - internshipStart;
+
+      const elapsed =
+        Math.min(
+          Math.max(now - internshipStart, 0),
+          totalDuration
+        );
+
+      const progress =
+        (elapsed / totalDuration) * 100;
+
+
+      const progressFill =
+        document.getElementById('progressFill');
+
+      const progressText =
+        document.getElementById('progressText');
+
+
+      if(progressFill){
+        progressFill.style.width =
+          progress.toFixed(2) + '%';
       }
+
+
+      if(progressText){
+
+        if(now < internshipStart){
+
+          progressText.textContent =
+            'Internship has not started yet.';
+
+        }else if(now >= internshipEnd){
+
+          progressText.textContent =
+            '100% complete · Internship completed.';
+
+        }else{
+
+          progressText.textContent =
+            progress.toFixed(1) +
+            '% of the internship journey completed.';
+
+        }
+
+      }
+
+
+      /* Countdown finished */
+
+      if(target - now <= 0){
+
+        document.getElementById('nativeCountdown').innerHTML = `
+          <div style="
+            text-align:center;
+            padding:30px 10px;
+            font-weight:900;
+            font-size:clamp(24px,5vw,38px);
+            line-height:1.4;
+          ">
+            Internship Complete. 🎓
+            <br>
+            <span style="
+              font-size:.55em;
+              color:var(--muted);
+              font-weight:600;
+            ">
+              One chapter ends. The next one begins.
+            </span>
+          </div>
+        `;
+
+        clearInterval(intv);
+
+      }
+
     }
 
-    const intv = setInterval(tick, 1000);
+
+    const intv =
+      setInterval(tick, 1000);
+
     tick();
 
-    // Theme switcher
-    const themeSelect = document.getElementById('themeSelect');
-    const savedTheme = localStorage.getItem('semesterTheme');
-    if (savedTheme) {
-      document.body.className = 'grid-bg ' + savedTheme;
-      themeSelect.value = savedTheme;
-    }
-    themeSelect.addEventListener('change', function(){
-      document.body.className = 'grid-bg ' + this.value;
-      localStorage.setItem('semesterTheme', this.value);
-    });
 
-    // Reaction game
-    const reactionBox = document.getElementById('reactionBox');
-    const reactionBtn = document.getElementById('reactionBtn');
-    const reactionResult = document.getElementById('reactionResult');
-    const reactionScore = document.getElementById('reactionScore');
+    /* =========================================================
+       THEME SWITCHER
+       ========================================================= */
+
+    const themeSelect =
+      document.getElementById('themeSelect');
+
+    const savedTheme =
+      localStorage.getItem('internshipTheme');
+
+
+    if(savedTheme){
+
+      document.body.className =
+        'grid-bg ' + savedTheme;
+
+      themeSelect.value =
+        savedTheme;
+
+    }
+
+
+    themeSelect.addEventListener(
+      'change',
+      function(){
+
+        document.body.className =
+          'grid-bg ' + this.value;
+
+        localStorage.setItem(
+          'internshipTheme',
+          this.value
+        );
+
+      }
+    );
+
+
+    /* =========================================================
+       REACTION GAME
+       ========================================================= */
+
+    const reactionBox =
+      document.getElementById('reactionBox');
+
+    const reactionBtn =
+      document.getElementById('reactionBtn');
+
+    const reactionResult =
+      document.getElementById('reactionResult');
+
+    const reactionScore =
+      document.getElementById('reactionScore');
+
+
     let reactionTimeout = null;
     let reactionStart = 0;
     let reactionBest = null;
     let reactionState = 'idle';
 
+
     function setReactionState(state, text){
+
       reactionState = state;
-      reactionBox.className = 'reaction-box ' + state;
-      reactionBox.textContent = text;
+
+      reactionBox.className =
+        'reaction-box ' + state;
+
+      reactionBox.textContent =
+        text;
+
     }
 
-    reactionBtn.addEventListener('click', () => {
-      clearTimeout(reactionTimeout);
-      reactionResult.textContent = '';
-      setReactionState('wait', 'Wait for green...');
-      reactionTimeout = setTimeout(() => {
-        reactionStart = Date.now();
-        setReactionState('go', 'Tap now!');
-      }, 1200 + Math.random() * 2200);
-    });
 
-    reactionBox.addEventListener('click', () => {
-      if (reactionState === 'wait') {
+    reactionBtn.addEventListener(
+      'click',
+      () => {
+
         clearTimeout(reactionTimeout);
-        setReactionState('too-soon', 'Too soon. Try again.');
-        reactionResult.textContent = 'You clicked before the green signal.';
-      } else if (reactionState === 'go') {
-        const time = Date.now() - reactionStart;
-        reactionResult.textContent = 'Reaction time: ' + time + ' ms';
-        if (reactionBest === null || time < reactionBest) {
-          reactionBest = time;
-          reactionScore.textContent = 'Best: ' + time + ' ms';
-        }
-        setReactionState('ready', 'Press Start');
-      }
-    });
 
-    // Memory game
-    const memoryDisplay = document.getElementById('memoryDisplay');
-    const memoryInput = document.getElementById('memoryInput');
-    const memoryCheckBtn = document.getElementById('memoryCheckBtn');
-    const memoryStartBtn = document.getElementById('memoryStartBtn');
-    const memoryResult = document.getElementById('memoryResult');
-    const memoryLevel = document.getElementById('memoryLevel');
+        reactionResult.textContent = '';
+
+        setReactionState(
+          'wait',
+          'Wait for green...'
+        );
+
+
+        reactionTimeout =
+          setTimeout(
+            () => {
+
+              reactionStart =
+                Date.now();
+
+              setReactionState(
+                'go',
+                'Tap now!'
+              );
+
+            },
+            1200 + Math.random() * 2200
+          );
+
+      }
+    );
+
+
+    reactionBox.addEventListener(
+      'click',
+      () => {
+
+        if(reactionState === 'wait'){
+
+          clearTimeout(reactionTimeout);
+
+          setReactionState(
+            'too-soon',
+            'Too soon. Try again.'
+          );
+
+          reactionResult.textContent =
+            'You clicked before the green signal.';
+
+        }
+
+        else if(reactionState === 'go'){
+
+          const time =
+            Date.now() - reactionStart;
+
+          reactionResult.textContent =
+            'Reaction time: ' +
+            time +
+            ' ms';
+
+
+          if(
+            reactionBest === null ||
+            time < reactionBest
+          ){
+
+            reactionBest = time;
+
+            reactionScore.textContent =
+              'Best: ' +
+              time +
+              ' ms';
+
+          }
+
+
+          setReactionState(
+            'ready',
+            'Press Start'
+          );
+
+        }
+
+      }
+    );
+
+
+    /* =========================================================
+       MEMORY GAME
+       ========================================================= */
+
+    const memoryDisplay =
+      document.getElementById('memoryDisplay');
+
+    const memoryInput =
+      document.getElementById('memoryInput');
+
+    const memoryCheckBtn =
+      document.getElementById('memoryCheckBtn');
+
+    const memoryStartBtn =
+      document.getElementById('memoryStartBtn');
+
+    const memoryResult =
+      document.getElementById('memoryResult');
+
+    const memoryLevel =
+      document.getElementById('memoryLevel');
+
+
     let memoryAnswer = '';
     let memoryDigits = 3;
 
+
     function makeDigits(len){
+
       let out = '';
-      for (let i = 0; i < len; i++) out += Math.floor(Math.random() * 10);
+
+      for(let i = 0; i < len; i++){
+
+        out +=
+          Math.floor(
+            Math.random() * 10
+          );
+
+      }
+
       return out;
+
     }
+
 
     function startMemoryGame(){
-      memoryAnswer = makeDigits(memoryDigits);
-      memoryDisplay.textContent = memoryAnswer;
+
+      memoryAnswer =
+        makeDigits(memoryDigits);
+
+      memoryDisplay.textContent =
+        memoryAnswer;
+
       memoryInput.value = '';
-      memoryResult.textContent = 'Memorise it...';
-      setTimeout(() => {
-        memoryDisplay.textContent = '•••';
-        memoryResult.textContent = 'Now type the digits.';
-      }, 1600);
+
+      memoryResult.textContent =
+        'Memorise it...';
+
+
+      setTimeout(
+        () => {
+
+          memoryDisplay.textContent =
+            '•••';
+
+          memoryResult.textContent =
+            'Now type the digits.';
+
+          memoryInput.focus();
+
+        },
+        1600
+      );
+
     }
 
-    memoryStartBtn.addEventListener('click', startMemoryGame);
-    memoryCheckBtn.addEventListener('click', () => {
-      if (!memoryAnswer) return;
-      if (memoryInput.value.trim() === memoryAnswer) {
-        memoryDigits += 1;
-        memoryLevel.textContent = 'Level: ' + memoryDigits;
-        memoryResult.textContent = 'Correct. Next round gets harder.';
-        startMemoryGame();
-      } else {
-        memoryResult.textContent = 'Not quite. The correct answer was ' + memoryAnswer + '.';
-        memoryDigits = 3;
-        memoryLevel.textContent = 'Level: 3';
-        memoryAnswer = '';
-        memoryDisplay.textContent = '---';
-      }
-    });
 
-    // Math game
-    const mathQuestion = document.getElementById('mathQuestion');
-    const mathInput = document.getElementById('mathInput');
-    const mathCheckBtn = document.getElementById('mathCheckBtn');
-    const mathNewBtn = document.getElementById('mathNewBtn');
-    const mathResult = document.getElementById('mathResult');
-    const mathScore = document.getElementById('mathScore');
+    memoryStartBtn.addEventListener(
+      'click',
+      startMemoryGame
+    );
+
+
+    memoryCheckBtn.addEventListener(
+      'click',
+      () => {
+
+        if(!memoryAnswer){
+          return;
+        }
+
+
+        if(
+          memoryInput.value.trim() ===
+          memoryAnswer
+        ){
+
+          memoryDigits += 1;
+
+          memoryLevel.textContent =
+            'Level: ' +
+            memoryDigits;
+
+          memoryResult.textContent =
+            'Correct. Next round gets harder.';
+
+          startMemoryGame();
+
+        }
+
+        else{
+
+          memoryResult.textContent =
+            'Not quite. The correct answer was ' +
+            memoryAnswer +
+            '.';
+
+          memoryDigits = 3;
+
+          memoryLevel.textContent =
+            'Level: 3';
+
+          memoryAnswer = '';
+
+          memoryDisplay.textContent =
+            '---';
+
+        }
+
+      }
+    );
+
+
+    memoryInput.addEventListener(
+      'keydown',
+      event => {
+
+        if(event.key === 'Enter'){
+          memoryCheckBtn.click();
+        }
+
+      }
+    );
+
+
+    /* =========================================================
+       MENTAL MATH
+       ========================================================= */
+
+    const mathQuestion =
+      document.getElementById('mathQuestion');
+
+    const mathInput =
+      document.getElementById('mathInput');
+
+    const mathCheckBtn =
+      document.getElementById('mathCheckBtn');
+
+    const mathNewBtn =
+      document.getElementById('mathNewBtn');
+
+    const mathResult =
+      document.getElementById('mathResult');
+
+    const mathScore =
+      document.getElementById('mathScore');
+
+
     let currentMathAnswer = 0;
     let currentMathScore = 0;
 
+
     function newMathQuestion(){
-      const a = Math.floor(Math.random() * 20) + 1;
-      const b = Math.floor(Math.random() * 20) + 1;
-      const ops = ['+', '-', '×'];
-      const op = ops[Math.floor(Math.random() * ops.length)];
-      if (op === '+') {
-        currentMathAnswer = a + b;
-        mathQuestion.textContent = a + ' + ' + b;
-      } else if (op === '-') {
-        const big = Math.max(a, b);
-        const small = Math.min(a, b);
-        currentMathAnswer = big - small;
-        mathQuestion.textContent = big + ' - ' + small;
-      } else {
-        const x = Math.floor(Math.random() * 12) + 1;
-        const y = Math.floor(Math.random() * 12) + 1;
-        currentMathAnswer = x * y;
-        mathQuestion.textContent = x + ' × ' + y;
+
+      const a =
+        Math.floor(Math.random() * 20) + 1;
+
+      const b =
+        Math.floor(Math.random() * 20) + 1;
+
+      const ops =
+        ['+', '-', '×'];
+
+      const op =
+        ops[
+          Math.floor(
+            Math.random() *
+            ops.length
+          )
+        ];
+
+
+      if(op === '+'){
+
+        currentMathAnswer =
+          a + b;
+
+        mathQuestion.textContent =
+          a + ' + ' + b;
+
       }
+
+      else if(op === '-'){
+
+        const big =
+          Math.max(a, b);
+
+        const small =
+          Math.min(a, b);
+
+        currentMathAnswer =
+          big - small;
+
+        mathQuestion.textContent =
+          big + ' - ' + small;
+
+      }
+
+      else{
+
+        const x =
+          Math.floor(
+            Math.random() * 12
+          ) + 1;
+
+        const y =
+          Math.floor(
+            Math.random() * 12
+          ) + 1;
+
+        currentMathAnswer =
+          x * y;
+
+        mathQuestion.textContent =
+          x + ' × ' + y;
+
+      }
+
+
       mathInput.value = '';
+
       mathResult.textContent = '';
+
     }
 
-    mathCheckBtn.addEventListener('click', () => {
-      const user = Number(mathInput.value);
-      if (Number.isNaN(user)) return;
-      if (user === currentMathAnswer) {
-        currentMathScore += 1;
-        mathScore.textContent = 'Score: ' + currentMathScore;
-        mathResult.textContent = 'Correct. Nice.';
-        newMathQuestion();
-      } else {
-        mathResult.textContent = 'Wrong. Correct answer: ' + currentMathAnswer;
-        currentMathScore = 0;
-        mathScore.textContent = 'Score: 0';
-      }
-    });
-    mathNewBtn.addEventListener('click', newMathQuestion);
 
-    // Init games
-    setReactionState('ready', 'Press Start');
-    memoryDisplay.textContent = '---';
+    mathCheckBtn.addEventListener(
+      'click',
+      () => {
+
+        if(
+          mathInput.value.trim() === ''
+        ){
+          return;
+        }
+
+
+        const user =
+          Number(mathInput.value);
+
+
+        if(Number.isNaN(user)){
+          return;
+        }
+
+
+        if(user === currentMathAnswer){
+
+          currentMathScore += 1;
+
+          mathScore.textContent =
+            'Score: ' +
+            currentMathScore;
+
+          mathResult.textContent =
+            'Correct. Nice.';
+
+          setTimeout(
+            newMathQuestion,
+            350
+          );
+
+        }
+
+        else{
+
+          mathResult.textContent =
+            'Wrong. Correct answer: ' +
+            currentMathAnswer;
+
+          currentMathScore = 0;
+
+          mathScore.textContent =
+            'Score: 0';
+
+        }
+
+      }
+    );
+
+
+    mathNewBtn.addEventListener(
+      'click',
+      newMathQuestion
+    );
+
+
+    mathInput.addEventListener(
+      'keydown',
+      event => {
+
+        if(event.key === 'Enter'){
+          mathCheckBtn.click();
+        }
+
+      }
+    );
+
+
+    /* =========================================================
+       INITIALISE GAMES
+       ========================================================= */
+
+    setReactionState(
+      'ready',
+      'Press Start'
+    );
+
+    memoryDisplay.textContent =
+      '---';
+
     newMathQuestion();
+
   </script>
+
 </body>
 </html>
