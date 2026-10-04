@@ -7,12 +7,15 @@
   <title>Internship Countdown | Glenn Chua</title>
   <meta
     name="description"
-    content="A personal countdown to the end of Glenn Chua's internship, with themes and mini brain games."
+    content="A personal countdown to the end of Glenn Chua's internship, with internship progress, themes and mini brain games."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
     :root{
@@ -84,7 +87,8 @@
       box-sizing:border-box;
     }
 
-    html,body{
+    html,
+    body{
       margin:0;
       min-height:100%;
     }
@@ -92,15 +96,44 @@
     body{
       color:var(--text);
       background:
-        radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 25%, transparent), transparent 30%),
-        radial-gradient(circle at top right, color-mix(in srgb, var(--accent3) 18%, transparent), transparent 24%),
-        radial-gradient(circle at bottom center, color-mix(in srgb, var(--accent2) 18%, transparent), transparent 32%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        radial-gradient(
+          circle at top left,
+          color-mix(in srgb, var(--accent) 25%, transparent),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at top right,
+          color-mix(in srgb, var(--accent3) 18%, transparent),
+          transparent 24%
+        ),
+        radial-gradient(
+          circle at bottom center,
+          color-mix(in srgb, var(--accent2) 18%, transparent),
+          transparent 32%
+        ),
+        linear-gradient(
+          180deg,
+          var(--bg) 0%,
+          var(--bg2) 100%
+        );
+
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
       overflow-x:hidden;
-      transition:background .35s ease, color .25s ease;
+
+      transition:
+        background .35s ease,
+        color .25s ease;
     }
 
     .grid-bg::before{
@@ -108,11 +141,27 @@
       position:fixed;
       inset:0;
       z-index:-2;
+
       background:
-        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+        linear-gradient(
+          rgba(255,255,255,.04) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.04) 1px,
+          transparent 1px
+        );
+
       background-size:34px 34px;
-      mask-image:radial-gradient(circle at center, black 42%, transparent 90%);
+
+      mask-image:
+        radial-gradient(
+          circle at center,
+          black 42%,
+          transparent 90%
+        );
+
       opacity:.16;
       pointer-events:none;
     }
@@ -122,10 +171,24 @@
       position:fixed;
       inset:0;
       z-index:-1;
+
       background:
-        radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 10%),
-        radial-gradient(circle at 80% 16%, color-mix(in srgb, var(--accent3) 18%, transparent), transparent 10%),
-        radial-gradient(circle at 60% 70%, color-mix(in srgb, var(--accent2) 18%, transparent), transparent 12%);
+        radial-gradient(
+          circle at 20% 20%,
+          color-mix(in srgb, var(--accent) 22%, transparent),
+          transparent 10%
+        ),
+        radial-gradient(
+          circle at 80% 16%,
+          color-mix(in srgb, var(--accent3) 18%, transparent),
+          transparent 10%
+        ),
+        radial-gradient(
+          circle at 60% 70%,
+          color-mix(in srgb, var(--accent2) 18%, transparent),
+          transparent 12%
+        );
+
       filter:blur(18px);
       pointer-events:none;
     }
@@ -134,9 +197,18 @@
       position:sticky;
       top:0;
       z-index:10;
+
       backdrop-filter:blur(14px);
-      background:linear-gradient(180deg, rgba(10,7,20,.90), rgba(10,7,20,.48));
-      border-bottom:1px solid rgba(255,255,255,.08);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(10,7,20,.90),
+          rgba(10,7,20,.48)
+        );
+
+      border-bottom:
+        1px solid rgba(255,255,255,.08);
     }
 
     .container{
@@ -156,32 +228,55 @@
       display:flex;
       align-items:center;
       gap:10px;
+
       min-width:0;
+
       text-decoration:none;
       color:var(--text);
+
       flex:1 1 auto;
     }
 
     .logo{
       width:42px;
       height:42px;
+
       border-radius:14px;
+
       display:grid;
       place-items:center;
+
       flex:0 0 42px;
+
       font-family:"JetBrains Mono", monospace;
       font-weight:700;
       font-size:13px;
-      background:linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow:0 0 24px color-mix(in srgb, var(--accent) 34%, transparent);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--accent),
+          var(--accent2)
+        );
+
+      box-shadow:
+        0 0 24px
+        color-mix(
+          in srgb,
+          var(--accent) 34%,
+          transparent
+        );
     }
 
     .brand h1{
       margin:0;
+
       font-size:18px;
       font-weight:800;
       letter-spacing:.3px;
+
       min-width:0;
+
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
@@ -191,36 +286,62 @@
       display:flex;
       align-items:center;
       gap:10px;
+
       flex-wrap:wrap;
       justify-content:flex-end;
     }
 
     .chip{
       padding:9px 14px;
+
       border-radius:999px;
+
       font-size:11px;
+
       color:#15071f;
-      background:linear-gradient(90deg, var(--gold), #fff0a8);
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--gold),
+          #fff0a8
+        );
+
       font-weight:800;
+
       letter-spacing:.08em;
       text-transform:uppercase;
-      box-shadow:0 10px 26px rgba(255,209,102,.25);
+
+      box-shadow:
+        0 10px 26px
+        rgba(255,209,102,.25);
+
       white-space:nowrap;
+
       flex:0 0 auto;
     }
 
     .theme-select{
       appearance:none;
-      border:1px solid rgba(255,255,255,.12);
+
+      border:
+        1px solid rgba(255,255,255,.12);
+
       background:var(--panel-strong);
       color:var(--text);
+
       border-radius:999px;
+
       padding:9px 14px;
+
       font-size:11px;
       font-weight:800;
+
       letter-spacing:.08em;
       text-transform:uppercase;
+
       outline:none;
+      cursor:pointer;
     }
 
     .hero{
@@ -230,75 +351,146 @@
 
     .eyebrow{
       color:var(--accent3);
-      font-family:"JetBrains Mono", monospace;
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
       letter-spacing:.16em;
+
       font-size:11px;
+
       text-transform:uppercase;
     }
 
     .title{
       margin:14px auto 14px;
-      font-size:clamp(2.4rem, 8vw, 4.6rem);
+
+      font-size:
+        clamp(
+          2.4rem,
+          8vw,
+          4.6rem
+        );
+
       font-weight:900;
+
       line-height:1.02;
+
       max-width:13ch;
+
       text-wrap:balance;
     }
 
     .glow-text{
-      background:linear-gradient(
-        90deg,
-        #ffffff 0%,
-        color-mix(in srgb, var(--accent2) 30%, white) 38%,
-        color-mix(in srgb, var(--accent3) 45%, white) 100%
-      );
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff 0%,
+          color-mix(
+            in srgb,
+            var(--accent2) 30%,
+            white
+          ) 38%,
+          color-mix(
+            in srgb,
+            var(--accent3) 45%,
+            white
+          ) 100%
+        );
+
       -webkit-background-clip:text;
       background-clip:text;
+
       color:transparent;
-      text-shadow:0 0 26px color-mix(in srgb, var(--accent) 15%, transparent);
+
+      text-shadow:
+        0 0 26px
+        color-mix(
+          in srgb,
+          var(--accent) 15%,
+          transparent
+        );
     }
 
     .subtitle{
       width:min(100%, 760px);
+
       margin:0 auto;
+
       line-height:1.72;
+
       color:var(--muted);
-      font-size:clamp(1rem, 3vw, 1.06rem);
+
+      font-size:
+        clamp(
+          1rem,
+          3vw,
+          1.06rem
+        );
+
       text-wrap:pretty;
     }
 
     .hero-badges{
       display:flex;
+
       justify-content:center;
+
       gap:10px;
+
       flex-wrap:wrap;
+
       margin-top:20px;
     }
 
     .mini-chip{
       padding:8px 12px;
+
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.05);
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      background:
+        rgba(255,255,255,.05);
+
       color:#efe9ff;
+
       font-size:12px;
       font-weight:700;
-      backdrop-filter:blur(10px);
+
+      backdrop-filter:
+        blur(10px);
     }
 
     .section-card,
     .countdown-wrap,
     .footer-card{
-      background:linear-gradient(180deg, var(--panel-strong), var(--panel));
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
+      background:
+        linear-gradient(
+          180deg,
+          var(--panel-strong),
+          var(--panel)
+        );
+
+      border:
+        1px solid var(--border);
+
+      box-shadow:
+        var(--shadow);
     }
 
     .countdown-wrap{
       position:relative;
+
       border-radius:28px;
+
       padding:18px;
+
       margin-top:30px;
+
       overflow:hidden;
     }
 
@@ -306,173 +498,339 @@
     .section-card::before,
     .footer-card::before{
       content:"";
+
       position:absolute;
+
       inset:-1px;
+
       border-radius:inherit;
+
       padding:1px;
-      background:linear-gradient(
-        135deg,
-        color-mix(in srgb, var(--accent) 80%, white),
-        color-mix(in srgb, var(--accent3) 55%, white),
-        color-mix(in srgb, var(--accent2) 70%, white)
-      );
-      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+
+      background:
+        linear-gradient(
+          135deg,
+          color-mix(
+            in srgb,
+            var(--accent) 80%,
+            white
+          ),
+          color-mix(
+            in srgb,
+            var(--accent3) 55%,
+            white
+          ),
+          color-mix(
+            in srgb,
+            var(--accent2) 70%,
+            white
+          )
+        );
+
+      -webkit-mask:
+        linear-gradient(#000 0 0)
+        content-box,
+        linear-gradient(#000 0 0);
+
       -webkit-mask-composite:xor;
       mask-composite:exclude;
+
       pointer-events:none;
+
       opacity:.8;
     }
 
     .embed-holder{
       width:100%;
+
       display:grid;
+
       place-items:center;
     }
 
     #nativeCountdown{
       width:min(100%, 760px);
+
       display:grid;
+
       gap:14px;
     }
 
     .target-text{
       text-align:center;
+
       color:#cfc1ff;
-      font-family:"JetBrains Mono", monospace;
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
       font-size:14px;
+
       letter-spacing:.3px;
+
       margin-bottom:4px;
+
       word-break:break-word;
     }
 
     .count-grid{
       display:grid;
-      grid-template-columns:repeat(4, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(
+          4,
+          minmax(0, 1fr)
+        );
+
       gap:14px;
+
       width:100%;
     }
 
     .stat,
     .game-card{
       min-width:0;
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.10);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.08),
+          rgba(255,255,255,.04)
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.10);
+
       border-radius:20px;
+
       padding:20px 10px;
+
       text-align:center;
-      backdrop-filter:blur(10px);
+
+      backdrop-filter:
+        blur(10px);
+
       box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,.02),
-        0 0 30px var(--card-glow);
+        inset 0 0 0 1px
+        rgba(255,255,255,.02),
+
+        0 0 30px
+        var(--card-glow);
     }
 
     .kpi{
-      font:800 clamp(1.65rem, 5vw, 2.6rem) "JetBrains Mono", monospace;
+      font:
+        800
+        clamp(
+          1.65rem,
+          5vw,
+          2.6rem
+        )
+        "JetBrains Mono",
+        monospace;
+
       letter-spacing:.05em;
+
       color:#fff;
+
       margin-bottom:6px;
+
       line-height:1;
     }
 
     .label{
       color:#cabfff;
-      font:12px "JetBrains Mono", monospace;
+
+      font:
+        12px
+        "JetBrains Mono",
+        monospace;
+
       letter-spacing:.08em;
+
       text-transform:uppercase;
     }
 
     .support-card{
       margin-top:18px;
+
       display:flex;
+
       align-items:center;
+
       justify-content:space-between;
+
       gap:14px;
+
       flex-wrap:wrap;
+
       padding:16px;
+
       border-radius:20px;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
+
+      background:
+        rgba(255,255,255,.05);
+
+      border:
+        1px solid
+        rgba(255,255,255,.10);
     }
 
     .support-copy{
       flex:1 1 320px;
+
       min-width:0;
     }
 
     .support-copy h3,
     .section-title{
       margin:0 0 6px;
+
       font-size:17px;
     }
 
     .support-copy p,
     .section-subtitle{
       margin:0;
+
       color:#ddd4ff;
+
       line-height:1.55;
+
       font-size:14px;
     }
 
     .progress-bar{
       width:100%;
+
       height:12px;
+
       margin-top:14px;
+
       overflow:hidden;
+
       border-radius:999px;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.08);
+
+      background:
+        rgba(255,255,255,.08);
+
+      border:
+        1px solid
+        rgba(255,255,255,.08);
     }
 
     .progress-fill{
       height:100%;
+
       width:0%;
+
       border-radius:999px;
-      background:linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
-      box-shadow:0 0 20px color-mix(in srgb, var(--accent) 35%, transparent);
-      transition:width .5s ease;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--accent),
+          var(--accent2),
+          var(--accent3)
+        );
+
+      box-shadow:
+        0 0 20px
+        color-mix(
+          in srgb,
+          var(--accent) 35%,
+          transparent
+        );
+
+      transition:
+        width .5s ease;
     }
 
     .progress-text{
       margin-top:9px;
+
       color:var(--muted);
-      font-family:"JetBrains Mono", monospace;
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
       font-size:12px;
     }
 
-    .btn,
-    .small-btn{
+    .small-btn,
+    .btn{
       display:inline-flex;
+
       align-items:center;
+
       justify-content:center;
+
       gap:10px;
+
       padding:12px 16px;
+
       border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background:linear-gradient(
-        135deg,
-        color-mix(in srgb, var(--accent) 18%, transparent),
-        color-mix(in srgb, var(--accent2) 18%, transparent)
-      );
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      background:
+        linear-gradient(
+          135deg,
+          color-mix(
+            in srgb,
+            var(--accent) 18%,
+            transparent
+          ),
+          color-mix(
+            in srgb,
+            var(--accent2) 18%,
+            transparent
+          )
+        );
+
       color:var(--text);
+
       text-decoration:none;
+
       font-weight:800;
+
       box-shadow:var(--shadow);
+
       transition:.2s ease;
+
       text-align:center;
+
       cursor:pointer;
     }
 
     .small-btn{
       padding:10px 12px;
+
       font-size:13px;
+
       box-shadow:none;
     }
 
     .btn:hover,
     .small-btn:hover{
-      transform:translateY(-2px);
-      border-color:rgba(255,255,255,.22);
-      box-shadow:0 20px 36px color-mix(in srgb, var(--accent) 24%, transparent);
+      transform:
+        translateY(-2px);
+
+      border-color:
+        rgba(255,255,255,.22);
+
+      box-shadow:
+        0 20px 36px
+        color-mix(
+          in srgb,
+          var(--accent) 24%,
+          transparent
+        );
     }
 
     .btn svg{
@@ -482,196 +840,326 @@
 
     .games-section{
       position:relative;
+
       margin-top:24px;
+
       border-radius:28px;
+
       padding:18px;
     }
 
     .games-header{
       display:flex;
+
       align-items:flex-start;
+
       justify-content:space-between;
+
       gap:14px;
+
       flex-wrap:wrap;
+
       margin-bottom:16px;
     }
 
     .games-grid{
       display:grid;
-      grid-template-columns:repeat(3, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0, 1fr)
+        );
+
       gap:14px;
     }
 
     .game-card{
       text-align:left;
+
       padding:16px;
     }
 
     .game-card h3{
       margin:0 0 6px;
+
       font-size:16px;
     }
 
     .game-card p{
       margin:0 0 12px;
+
       color:var(--muted);
+
       font-size:13px;
+
       line-height:1.55;
     }
 
     .game-top{
       display:flex;
+
       align-items:center;
+
       justify-content:space-between;
+
       gap:10px;
+
       margin-bottom:12px;
     }
 
     .game-badge{
       padding:6px 10px;
+
       border-radius:999px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
+
+      background:
+        rgba(255,255,255,.06);
+
+      border:
+        1px solid
+        rgba(255,255,255,.10);
+
       font-size:11px;
+
       font-weight:800;
     }
 
     .game-stage{
       min-height:110px;
+
       display:grid;
+
       place-items:center;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
+
+      background:
+        rgba(255,255,255,.04);
+
+      border:
+        1px solid
+        rgba(255,255,255,.08);
+
       border-radius:16px;
+
       padding:12px;
+
       margin-bottom:12px;
+
       text-align:center;
     }
 
     .reaction-box{
       width:100%;
+
       min-height:120px;
+
       border-radius:16px;
+
       display:grid;
+
       place-items:center;
+
       font-weight:800;
+
       padding:14px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.04);
+
+      border:
+        1px solid
+        rgba(255,255,255,.08);
+
+      background:
+        rgba(255,255,255,.04);
+
       user-select:none;
+
       cursor:pointer;
     }
 
     .reaction-box.ready{
-      background:rgba(255,255,255,.04);
+      background:
+        rgba(255,255,255,.04);
     }
 
     .reaction-box.wait{
-      background:rgba(255, 209, 102, .18);
+      background:
+        rgba(255,209,102,.18);
     }
 
     .reaction-box.go{
-      background:rgba(34, 197, 94, .26);
+      background:
+        rgba(34,197,94,.26);
     }
 
     .reaction-box.too-soon{
-      background:rgba(239, 68, 68, .24);
+      background:
+        rgba(239,68,68,.24);
     }
 
     .memory-sequence{
-      font:800 28px "JetBrains Mono", monospace;
+      font:
+        800
+        28px
+        "JetBrains Mono",
+        monospace;
+
       letter-spacing:.12em;
     }
 
     .math-question{
-      font:800 30px "JetBrains Mono", monospace;
+      font:
+        800
+        30px
+        "JetBrains Mono",
+        monospace;
+
       letter-spacing:.04em;
     }
 
     .game-controls{
       display:flex;
+
       gap:8px;
+
       flex-wrap:wrap;
     }
 
     .input-row{
       display:flex;
+
       gap:8px;
+
       width:100%;
+
       flex-wrap:wrap;
     }
 
     .game-input{
       flex:1 1 120px;
+
       min-width:0;
+
       padding:11px 12px;
+
       border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.05);
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      background:
+        rgba(255,255,255,.05);
+
       color:var(--text);
+
       outline:none;
-      font:600 14px Inter, sans-serif;
+
+      font:
+        600
+        14px
+        Inter,
+        sans-serif;
     }
 
     .game-result{
       margin-top:10px;
+
       font-size:13px;
+
       color:var(--muted);
+
       min-height:20px;
     }
 
     footer{
       padding:22px 0 50px;
+
       color:#e2d9ff;
     }
 
     .footer-card{
       position:relative;
+
       border-radius:22px;
+
       padding:16px;
+
       display:flex;
+
       gap:14px;
+
       align-items:center;
+
       justify-content:space-between;
+
       flex-wrap:wrap;
+
       overflow:hidden;
     }
 
     .author{
       display:flex;
+
       align-items:center;
+
       gap:12px;
+
       flex:1 1 320px;
+
       min-width:0;
     }
 
     .avatar{
       width:50px;
       height:50px;
+
       border-radius:50%;
+
       flex:0 0 50px;
+
       background:
-        radial-gradient(circle at 35% 35%, rgba(255,255,255,.9), transparent 20%),
-        linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow:0 0 26px color-mix(in srgb, var(--accent) 28%, transparent);
+        radial-gradient(
+          circle at 35% 35%,
+          rgba(255,255,255,.9),
+          transparent 20%
+        ),
+        linear-gradient(
+          135deg,
+          var(--accent),
+          var(--accent2)
+        );
+
+      box-shadow:
+        0 0 26px
+        color-mix(
+          in srgb,
+          var(--accent) 28%,
+          transparent
+        );
     }
 
     .author h3{
       margin:0;
+
       font-size:16px;
+
       font-weight:800;
     }
 
     .author p{
       margin:3px 0 0;
+
       font-size:13px;
+
       color:#cabfff;
+
       line-height:1.5;
+
       word-break:break-word;
     }
 
     .linkedin-btn{
       flex:1 1 240px;
+
       max-width:260px;
     }
 
@@ -680,31 +1168,39 @@
     }
 
     @media (max-width:900px){
+
       .games-grid{
         grid-template-columns:1fr;
       }
+
     }
 
     @media (max-width:720px){
+
       .container{
         width:min(100% - 16px, 980px);
       }
 
       .topbar{
         gap:8px;
+
         padding:12px 0;
+
         align-items:flex-start;
       }
 
       .topbar-right{
         width:100%;
+
         justify-content:flex-start;
       }
 
       .logo{
         width:38px;
         height:38px;
+
         flex-basis:38px;
+
         border-radius:12px;
       }
 
@@ -715,7 +1211,9 @@
       .chip,
       .theme-select{
         font-size:9px;
+
         padding:8px 9px;
+
         letter-spacing:.05em;
       }
 
@@ -725,47 +1223,69 @@
 
       .eyebrow{
         font-size:10px;
+
         letter-spacing:.13em;
       }
 
       .title{
         max-width:100%;
-        font-size:clamp(2.35rem, 11vw, 4rem);
+
+        font-size:
+          clamp(
+            2.35rem,
+            11vw,
+            4rem
+          );
       }
 
       .subtitle{
         font-size:15px;
+
         max-width:100%;
       }
 
       .mini-chip{
         font-size:10px;
+
         padding:8px 10px;
       }
 
       .countdown-wrap,
       .games-section{
         padding:14px;
+
         border-radius:22px;
       }
 
       .target-text{
         font-size:11px;
+
         line-height:1.5;
       }
 
       .count-grid{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
+
         gap:10px;
       }
 
       .stat{
         padding:18px 10px;
+
         border-radius:16px;
       }
 
       .kpi{
-        font-size:clamp(2rem, 8.6vw, 2.8rem);
+        font-size:
+          clamp(
+            2rem,
+            8.6vw,
+            2.8rem
+          );
       }
 
       .label{
@@ -790,16 +1310,20 @@
       .linkedin-btn,
       .small-btn{
         width:100%;
+
         max-width:none;
       }
 
       .footer-card{
         padding:14px;
+
         border-radius:18px;
       }
+
     }
 
     @media (max-width:420px){
+
       .container{
         width:min(100% - 12px, 980px);
       }
@@ -815,6 +1339,7 @@
       .chip,
       .theme-select{
         font-size:8px;
+
         padding:7px 8px;
       }
 
@@ -823,7 +1348,12 @@
       }
 
       .title{
-        font-size:clamp(2.2rem, 12.5vw, 3.2rem);
+        font-size:
+          clamp(
+            2.2rem,
+            12.5vw,
+            3.2rem
+          );
       }
 
       .subtitle{
@@ -836,6 +1366,7 @@
 
       .mini-chip{
         width:100%;
+
         text-align:center;
       }
 
@@ -862,88 +1393,216 @@
       .author p{
         font-size:12px;
       }
+
     }
   </style>
 </head>
 
 <body class="grid-bg theme-neon">
 
+  <!-- ======================================================
+       HEADER
+       ====================================================== -->
+
   <header>
+
     <div class="container topbar">
 
-      <a class="brand" href="#" aria-label="Internship Countdown Home">
-        <div class="logo">NCS</div>
-        <h1>Internship Countdown</h1>
+      <a
+        class="brand"
+        href="#"
+        aria-label="Internship Countdown Home"
+      >
+
+        <div class="logo">
+          NCS
+        </div>
+
+        <h1>
+          Internship Countdown
+        </h1>
+
       </a>
 
-      <div class="topbar-right">
-        <span class="chip">Final Stretch</span>
 
-        <select id="themeSelect" class="theme-select" aria-label="Choose theme">
-          <option value="theme-neon">Neon</option>
-          <option value="theme-midnight">Midnight</option>
-          <option value="theme-sunset">Sunset</option>
+      <div class="topbar-right">
+
+        <span class="chip">
+          Final Stretch
+        </span>
+
+
+        <select
+          id="themeSelect"
+          class="theme-select"
+          aria-label="Choose theme"
+        >
+
+          <option value="theme-neon">
+            Neon
+          </option>
+
+          <option value="theme-midnight">
+            Midnight
+          </option>
+
+          <option value="theme-sunset">
+            Sunset
+          </option>
+
         </select>
+
       </div>
 
     </div>
+
   </header>
+
+
+  <!-- ======================================================
+       MAIN CONTENT
+       ====================================================== -->
 
   <main class="container">
 
     <section class="hero">
 
-      <div class="eyebrow">The final stretch of the journey</div>
+
+      <!-- HERO -->
+
+      <div class="eyebrow">
+        The final stretch of the journey
+      </div>
+
 
       <h2 class="title">
+
         <span class="glow-text">
           Counting down to the end of internship.
         </span>
+
       </h2>
 
+
       <p class="subtitle">
-        Every site survey, deployment, troubleshooting session, document,
-        lesson and long day has been part of the journey. Keep learning,
-        keep improving, and make the remaining days count.
+
+        Every site survey, deployment, troubleshooting session,
+        document, lesson and long day has been part of the journey.
+
+        Keep learning, keep improving, and make the remaining
+        days count.
+
       </p>
 
+
       <div class="hero-badges">
-        <span class="mini-chip">Internship Countdown</span>
-        <span class="mini-chip">Keep Learning</span>
-        <span class="mini-chip">Finish Strong</span>
+
+        <span class="mini-chip">
+          Internship Countdown
+        </span>
+
+        <span class="mini-chip">
+          Keep Learning
+        </span>
+
+        <span class="mini-chip">
+          Finish Strong
+        </span>
+
       </div>
+
+
+      <!-- ==================================================
+           COUNTDOWN
+           ================================================== -->
 
       <div class="countdown-wrap">
 
-        <div class="embed-holder" aria-live="polite">
+
+        <div
+          class="embed-holder"
+          aria-live="polite"
+        >
+
 
           <div id="nativeCountdown">
 
+
             <div class="target-text">
-              Internship Ends · 31 January 2027 · 11:59 PM SGT
+
+              Internship Ends ·
+              29 January 2027 ·
+              11:59 PM SGT
+
             </div>
+
 
             <div class="count-grid">
 
-              <div class="stat">
-                <div class="kpi" id="dDD">--</div>
-                <div class="label">Days</div>
-              </div>
 
               <div class="stat">
-                <div class="kpi" id="dHH">--</div>
-                <div class="label">Hours</div>
+
+                <div
+                  class="kpi"
+                  id="dDD"
+                >
+                  --
+                </div>
+
+                <div class="label">
+                  Days
+                </div>
+
               </div>
 
-              <div class="stat">
-                <div class="kpi" id="dMM">--</div>
-                <div class="label">Minutes</div>
-              </div>
 
               <div class="stat">
-                <div class="kpi" id="dSS">--</div>
-                <div class="label">Seconds</div>
+
+                <div
+                  class="kpi"
+                  id="dHH"
+                >
+                  --
+                </div>
+
+                <div class="label">
+                  Hours
+                </div>
+
               </div>
+
+
+              <div class="stat">
+
+                <div
+                  class="kpi"
+                  id="dMM"
+                >
+                  --
+                </div>
+
+                <div class="label">
+                  Minutes
+                </div>
+
+              </div>
+
+
+              <div class="stat">
+
+                <div
+                  class="kpi"
+                  id="dSS"
+                >
+                  --
+                </div>
+
+                <div class="label">
+                  Seconds
+                </div>
+
+              </div>
+
 
             </div>
 
@@ -951,91 +1610,208 @@
 
         </div>
 
+
+        <!-- ================================================
+             INTERNSHIP PROGRESS
+             ================================================ -->
+
         <div class="support-card">
+
 
           <div class="support-copy">
 
-            <h3>Internship Progress</h3>
+
+            <h3>
+              Internship Progress
+            </h3>
+
 
             <p>
               One day at a time. The finish line is getting closer.
             </p>
 
+
             <div class="progress-bar">
-              <div id="progressFill" class="progress-fill"></div>
+
+              <div
+                id="progressFill"
+                class="progress-fill"
+              ></div>
+
             </div>
 
-            <div id="progressText" class="progress-text">
+
+            <div
+              id="progressText"
+              class="progress-text"
+            >
+
               Calculating internship progress...
+
             </div>
+
 
           </div>
 
+
         </div>
+
 
       </div>
 
-      <section class="games-section section-card">
+
+      <!-- ==================================================
+           MINI GAMES
+           ================================================== -->
+
+      <section
+        class="games-section section-card"
+      >
+
 
         <div class="games-header">
 
+
           <div>
-            <h3 class="section-title">Mini Brain Breaks</h3>
+
+            <h3 class="section-title">
+              Mini Brain Breaks
+            </h3>
+
 
             <p class="section-subtitle">
-              Need a quick break? Reset your brain before getting back to work.
+
+              Need a quick break?
+
+              Reset your brain before getting back to work.
               Scores reset when the page reloads.
+
             </p>
+
           </div>
+
 
         </div>
 
+
         <div class="games-grid">
 
-          <!-- REACTION TEST -->
+
+          <!-- ==============================================
+               REACTION TEST
+               ============================================== -->
+
           <article class="game-card">
 
+
             <div class="game-top">
-              <h3>Reaction Test</h3>
-              <span class="game-badge" id="reactionScore">Best: -- ms</span>
+
+              <h3>
+                Reaction Test
+              </h3>
+
+
+              <span
+                class="game-badge"
+                id="reactionScore"
+              >
+
+                Best: -- ms
+
+              </span>
+
             </div>
+
 
             <p>
               Tap as fast as you can when the box turns green.
             </p>
 
-            <div id="reactionBox" class="reaction-box ready">
+
+            <div
+              id="reactionBox"
+              class="reaction-box ready"
+            >
+
               Press Start
+
             </div>
 
-            <div class="game-controls" style="margin-top:12px;">
-              <button id="reactionBtn" class="small-btn" type="button">
+
+            <div
+              class="game-controls"
+              style="margin-top:12px;"
+            >
+
+              <button
+                id="reactionBtn"
+                class="small-btn"
+                type="button"
+              >
+
                 Start Reaction Test
+
               </button>
+
             </div>
 
-            <div id="reactionResult" class="game-result"></div>
+
+            <div
+              id="reactionResult"
+              class="game-result"
+            ></div>
+
 
           </article>
 
 
-          <!-- MEMORY GAME -->
+          <!-- ==============================================
+               MEMORY DIGITS
+               ============================================== -->
+
           <article class="game-card">
 
+
             <div class="game-top">
-              <h3>Memory Digits</h3>
-              <span class="game-badge" id="memoryLevel">Level: 3</span>
+
+              <h3>
+                Memory Digits
+              </h3>
+
+
+              <span
+                class="game-badge"
+                id="memoryLevel"
+              >
+
+                Level: 3
+
+              </span>
+
             </div>
+
 
             <p>
               Memorise the number, then type it back correctly.
             </p>
 
+
             <div class="game-stage">
-              <div id="memoryDisplay" class="memory-sequence">---</div>
+
+              <div
+                id="memoryDisplay"
+                class="memory-sequence"
+              >
+
+                ---
+
+              </div>
+
             </div>
 
+
             <div class="input-row">
+
 
               <input
                 id="memoryInput"
@@ -1045,52 +1821,101 @@
                 placeholder="Type the digits"
               />
 
+
               <button
                 id="memoryCheckBtn"
                 class="small-btn"
                 type="button"
               >
+
                 Check
+
               </button>
+
 
             </div>
 
-            <div class="game-controls" style="margin-top:8px;">
+
+            <div
+              class="game-controls"
+              style="margin-top:8px;"
+            >
+
 
               <button
                 id="memoryStartBtn"
                 class="small-btn"
                 type="button"
               >
+
                 New Sequence
+
               </button>
+
 
             </div>
 
-            <div id="memoryResult" class="game-result"></div>
+
+            <div
+              id="memoryResult"
+              class="game-result"
+            ></div>
+
 
           </article>
 
 
-          <!-- MENTAL MATH -->
+          <!-- ==============================================
+               MENTAL MATH
+               ============================================== -->
+
           <article class="game-card">
 
+
             <div class="game-top">
-              <h3>Mental Math</h3>
-              <span class="game-badge" id="mathScore">Score: 0</span>
+
+
+              <h3>
+                Mental Math
+              </h3>
+
+
+              <span
+                class="game-badge"
+                id="mathScore"
+              >
+
+                Score: 0
+
+              </span>
+
+
             </div>
+
 
             <p>
               Solve quick maths questions and build your streak.
             </p>
 
+
             <div class="game-stage">
-              <div id="mathQuestion" class="math-question">
+
+
+              <div
+                id="mathQuestion"
+                class="math-question"
+              >
+
                 2 + 3
+
               </div>
+
+
             </div>
 
+
             <div class="input-row">
+
 
               <input
                 id="mathInput"
@@ -1099,58 +1924,99 @@
                 placeholder="Answer"
               />
 
+
               <button
                 id="mathCheckBtn"
                 class="small-btn"
                 type="button"
               >
+
                 Submit
+
               </button>
+
 
             </div>
 
-            <div class="game-controls" style="margin-top:8px;">
+
+            <div
+              class="game-controls"
+              style="margin-top:8px;"
+            >
+
 
               <button
                 id="mathNewBtn"
                 class="small-btn"
                 type="button"
               >
+
                 Next Question
+
               </button>
+
 
             </div>
 
-            <div id="mathResult" class="game-result"></div>
+
+            <div
+              id="mathResult"
+              class="game-result"
+            ></div>
+
 
           </article>
 
+
         </div>
 
+
       </section>
+
 
     </section>
 
   </main>
 
 
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+
   <footer class="container">
+
 
     <div class="footer-card">
 
+
       <div class="author">
 
-        <div class="avatar" aria-hidden="true"></div>
+
+        <div
+          class="avatar"
+          aria-hidden="true"
+        ></div>
+
 
         <div>
-          <h3>Glenn Chua</h3>
+
+
+          <h3>
+            Glenn Chua
+          </h3>
+
 
           <p>
-            Network &amp; Security Intern · Cybersecurity &amp; Digital Forensics
+            Network &amp; Security Intern ·
+            Cybersecurity &amp; Digital Forensics
           </p>
+
+
         </div>
 
+
       </div>
+
 
       <a
         class="btn linkedin-btn"
@@ -1159,19 +2025,28 @@
         rel="noopener"
       >
 
+
         <svg
           viewBox="0 0 24 24"
           fill="currentColor"
           aria-hidden="true"
         >
-          <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.8v2.11h.05c.53-1 1.83-2.11 3.77-2.11 4.03 0 4.78 2.65 4.78 6.09V24h-4v-7.3c0-1.74-.03-3.98-2.43-3.98-2.44 0-2.81 1.9-2.81 3.86V24h-4V8.5z"/>
+
+          <path
+            d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.8v2.11h.05c.53-1 1.83-2.11 3.77-2.11 4.03 0 4.78 2.65 4.78 6.09V24h-4v-7.3c0-1.74-.03-3.98-2.43-3.98-2.44 0-2.81 1.9-2.81 3.86V24h-4V8.5z"
+          />
+
         </svg>
+
 
         Connect on LinkedIn
 
+
       </a>
 
+
     </div>
+
 
   </footer>
 
@@ -1180,109 +2055,267 @@
 
     /* =========================================================
        INTERNSHIP DATES
+
+       Start:
+       1 March 2026
+
+       End:
+       29 January 2027
+       11:59:59 PM Singapore Time
        ========================================================= */
 
+
     const internshipStart =
-      new Date('2026-03-01T00:00:00+08:00').getTime();
+      new Date(
+        '2026-03-01T00:00:00+08:00'
+      ).getTime();
+
 
     const internshipEnd =
-      new Date('2027-01-29T23:59:59+08:00').getTime();
+      new Date(
+        '2027-01-29T23:59:59+08:00'
+      ).getTime();
 
-    const target = internshipEnd;
+
+    const target =
+      internshipEnd;
+
 
 
     /* =========================================================
        COUNTDOWN
        ========================================================= */
 
+
     function pad(n){
-      return String(n).padStart(2, '0');
+
+      return String(n)
+        .padStart(2, '0');
+
     }
+
 
 
     function tick(){
 
-      const now = Date.now();
 
-      let diff = Math.max(0, target - now);
+      const now =
+        Date.now();
+
+
+      let diff =
+        Math.max(
+          0,
+          target - now
+        );
+
+
+      /* DAYS */
 
       const d =
-        Math.floor(diff / (1000 * 60 * 60 * 24));
+        Math.floor(
+          diff /
+          (
+            1000 *
+            60 *
+            60 *
+            24
+          )
+        );
 
-      diff -= d * 24 * 60 * 60 * 1000;
+
+      diff -=
+        d *
+        24 *
+        60 *
+        60 *
+        1000;
+
+
+      /* HOURS */
 
       const h =
-        Math.floor(diff / (1000 * 60 * 60));
+        Math.floor(
+          diff /
+          (
+            1000 *
+            60 *
+            60
+          )
+        );
 
-      diff -= h * 60 * 60 * 1000;
+
+      diff -=
+        h *
+        60 *
+        60 *
+        1000;
+
+
+      /* MINUTES */
 
       const m =
-        Math.floor(diff / (1000 * 60));
+        Math.floor(
+          diff /
+          (
+            1000 *
+            60
+          )
+        );
 
-      diff -= m * 60 * 1000;
+
+      diff -=
+        m *
+        60 *
+        1000;
+
+
+      /* SECONDS */
 
       const s =
-        Math.floor(diff / 1000);
+        Math.floor(
+          diff /
+          1000
+        );
 
 
-      const elD = document.getElementById('dDD');
-      const elH = document.getElementById('dHH');
-      const elM = document.getElementById('dMM');
-      const elS = document.getElementById('dSS');
+
+      const elD =
+        document.getElementById(
+          'dDD'
+        );
 
 
-      if(!elD || !elH || !elM || !elS){
+      const elH =
+        document.getElementById(
+          'dHH'
+        );
+
+
+      const elM =
+        document.getElementById(
+          'dMM'
+        );
+
+
+      const elS =
+        document.getElementById(
+          'dSS'
+        );
+
+
+
+      if(
+        !elD ||
+        !elH ||
+        !elM ||
+        !elS
+      ){
+
         return;
+
       }
 
 
-      elD.textContent = d;
-      elH.textContent = pad(h);
-      elM.textContent = pad(m);
-      elS.textContent = pad(s);
+
+      elD.textContent =
+        d;
 
 
-      /* Internship progress */
+      elH.textContent =
+        pad(h);
+
+
+      elM.textContent =
+        pad(m);
+
+
+      elS.textContent =
+        pad(s);
+
+
+
+      /* =====================================================
+         INTERNSHIP PROGRESS
+         ===================================================== */
+
 
       const totalDuration =
-        internshipEnd - internshipStart;
+        internshipEnd -
+        internshipStart;
+
 
       const elapsed =
         Math.min(
-          Math.max(now - internshipStart, 0),
+
+          Math.max(
+            now -
+            internshipStart,
+            0
+          ),
+
           totalDuration
+
         );
 
+
       const progress =
-        (elapsed / totalDuration) * 100;
+        (
+          elapsed /
+          totalDuration
+        ) * 100;
+
 
 
       const progressFill =
-        document.getElementById('progressFill');
+        document.getElementById(
+          'progressFill'
+        );
+
 
       const progressText =
-        document.getElementById('progressText');
+        document.getElementById(
+          'progressText'
+        );
+
 
 
       if(progressFill){
+
         progressFill.style.width =
-          progress.toFixed(2) + '%';
+          progress.toFixed(2) +
+          '%';
+
       }
+
 
 
       if(progressText){
 
-        if(now < internshipStart){
+
+        if(
+          now <
+          internshipStart
+        ){
 
           progressText.textContent =
             'Internship has not started yet.';
 
-        }else if(now >= internshipEnd){
+        }
+
+
+        else if(
+          now >=
+          internshipEnd
+        ){
 
           progressText.textContent =
             '100% complete · Internship completed.';
 
-        }else{
+        }
+
+
+        else{
 
           progressText.textContent =
             progress.toFixed(1) +
@@ -1290,127 +2323,229 @@
 
         }
 
-      }
-
-
-      /* Countdown finished */
-
-      if(target - now <= 0){
-
-        document.getElementById('nativeCountdown').innerHTML = `
-          <div style="
-            text-align:center;
-            padding:30px 10px;
-            font-weight:900;
-            font-size:clamp(24px,5vw,38px);
-            line-height:1.4;
-          ">
-            Internship Complete. 🎓
-            <br>
-            <span style="
-              font-size:.55em;
-              color:var(--muted);
-              font-weight:600;
-            ">
-              One chapter ends. The next one begins.
-            </span>
-          </div>
-        `;
-
-        clearInterval(intv);
 
       }
+
+
+
+      /* =====================================================
+         COUNTDOWN COMPLETE
+         ===================================================== */
+
+
+      if(
+        target - now <= 0
+      ){
+
+
+        document
+          .getElementById(
+            'nativeCountdown'
+          )
+          .innerHTML = `
+
+            <div
+              style="
+                text-align:center;
+                padding:30px 10px;
+                font-weight:900;
+                font-size:clamp(
+                  24px,
+                  5vw,
+                  38px
+                );
+                line-height:1.4;
+              "
+            >
+
+              Internship Complete. 🎓
+
+              <br>
+
+              <span
+                style="
+                  font-size:.55em;
+                  color:var(--muted);
+                  font-weight:600;
+                "
+              >
+
+                One chapter ends.
+                The next one begins.
+
+              </span>
+
+            </div>
+
+          `;
+
+
+        clearInterval(
+          intv
+        );
+
+
+      }
+
 
     }
 
 
+
     const intv =
-      setInterval(tick, 1000);
+      setInterval(
+        tick,
+        1000
+      );
+
 
     tick();
+
 
 
     /* =========================================================
        THEME SWITCHER
        ========================================================= */
 
+
     const themeSelect =
-      document.getElementById('themeSelect');
+      document.getElementById(
+        'themeSelect'
+      );
+
 
     const savedTheme =
-      localStorage.getItem('internshipTheme');
+      localStorage.getItem(
+        'internshipTheme'
+      );
+
 
 
     if(savedTheme){
 
+
       document.body.className =
-        'grid-bg ' + savedTheme;
+        'grid-bg ' +
+        savedTheme;
+
 
       themeSelect.value =
         savedTheme;
 
+
     }
 
 
+
     themeSelect.addEventListener(
+
       'change',
+
       function(){
 
+
         document.body.className =
-          'grid-bg ' + this.value;
+          'grid-bg ' +
+          this.value;
+
 
         localStorage.setItem(
           'internshipTheme',
           this.value
         );
 
+
       }
+
     );
 
 
+
     /* =========================================================
-       REACTION GAME
+       REACTION TEST
        ========================================================= */
 
+
     const reactionBox =
-      document.getElementById('reactionBox');
+      document.getElementById(
+        'reactionBox'
+      );
+
 
     const reactionBtn =
-      document.getElementById('reactionBtn');
+      document.getElementById(
+        'reactionBtn'
+      );
+
 
     const reactionResult =
-      document.getElementById('reactionResult');
+      document.getElementById(
+        'reactionResult'
+      );
+
 
     const reactionScore =
-      document.getElementById('reactionScore');
+      document.getElementById(
+        'reactionScore'
+      );
 
 
-    let reactionTimeout = null;
-    let reactionStart = 0;
-    let reactionBest = null;
-    let reactionState = 'idle';
+
+    let reactionTimeout =
+      null;
 
 
-    function setReactionState(state, text){
+    let reactionStart =
+      0;
 
-      reactionState = state;
+
+    let reactionBest =
+      null;
+
+
+    let reactionState =
+      'idle';
+
+
+
+    function setReactionState(
+      state,
+      text
+    ){
+
+
+      reactionState =
+        state;
+
 
       reactionBox.className =
-        'reaction-box ' + state;
+        'reaction-box ' +
+        state;
+
 
       reactionBox.textContent =
         text;
 
+
     }
 
 
+
     reactionBtn.addEventListener(
+
       'click',
+
       () => {
 
-        clearTimeout(reactionTimeout);
 
-        reactionResult.textContent = '';
+        clearTimeout(
+          reactionTimeout
+        );
+
+
+        reactionResult.textContent =
+          '';
+
 
         setReactionState(
           'wait',
@@ -1418,48 +2553,79 @@
         );
 
 
+
         reactionTimeout =
           setTimeout(
+
             () => {
+
 
               reactionStart =
                 Date.now();
+
 
               setReactionState(
                 'go',
                 'Tap now!'
               );
 
+
             },
-            1200 + Math.random() * 2200
+
+            1200 +
+            Math.random() *
+            2200
+
           );
 
+
       }
+
     );
 
 
+
     reactionBox.addEventListener(
+
       'click',
+
       () => {
 
-        if(reactionState === 'wait'){
 
-          clearTimeout(reactionTimeout);
+        if(
+          reactionState ===
+          'wait'
+        ){
+
+
+          clearTimeout(
+            reactionTimeout
+          );
+
 
           setReactionState(
             'too-soon',
             'Too soon. Try again.'
           );
 
+
           reactionResult.textContent =
             'You clicked before the green signal.';
 
+
         }
 
-        else if(reactionState === 'go'){
+
+        else if(
+          reactionState ===
+          'go'
+        ){
+
 
           const time =
-            Date.now() - reactionStart;
+            Date.now() -
+            reactionStart;
+
 
           reactionResult.textContent =
             'Reaction time: ' +
@@ -1467,19 +2633,26 @@
             ' ms';
 
 
+
           if(
             reactionBest === null ||
-            time < reactionBest
+            time <
+            reactionBest
           ){
 
-            reactionBest = time;
+
+            reactionBest =
+              time;
+
 
             reactionScore.textContent =
               'Best: ' +
               time +
               ' ms';
 
+
           }
+
 
 
           setReactionState(
@@ -1487,194 +2660,337 @@
             'Press Start'
           );
 
+
         }
 
+
       }
+
     );
 
 
+
     /* =========================================================
-       MEMORY GAME
+       MEMORY DIGITS
        ========================================================= */
 
+
     const memoryDisplay =
-      document.getElementById('memoryDisplay');
+      document.getElementById(
+        'memoryDisplay'
+      );
+
 
     const memoryInput =
-      document.getElementById('memoryInput');
+      document.getElementById(
+        'memoryInput'
+      );
+
 
     const memoryCheckBtn =
-      document.getElementById('memoryCheckBtn');
+      document.getElementById(
+        'memoryCheckBtn'
+      );
+
 
     const memoryStartBtn =
-      document.getElementById('memoryStartBtn');
+      document.getElementById(
+        'memoryStartBtn'
+      );
+
 
     const memoryResult =
-      document.getElementById('memoryResult');
+      document.getElementById(
+        'memoryResult'
+      );
+
 
     const memoryLevel =
-      document.getElementById('memoryLevel');
+      document.getElementById(
+        'memoryLevel'
+      );
 
 
-    let memoryAnswer = '';
-    let memoryDigits = 3;
+
+    let memoryAnswer =
+      '';
 
 
-    function makeDigits(len){
+    let memoryDigits =
+      3;
 
-      let out = '';
 
-      for(let i = 0; i < len; i++){
+
+    function makeDigits(
+      len
+    ){
+
+
+      let out =
+        '';
+
+
+      for(
+        let i = 0;
+        i < len;
+        i++
+      ){
+
 
         out +=
           Math.floor(
-            Math.random() * 10
+            Math.random() *
+            10
           );
+
 
       }
 
+
       return out;
+
 
     }
 
 
+
     function startMemoryGame(){
 
+
       memoryAnswer =
-        makeDigits(memoryDigits);
+        makeDigits(
+          memoryDigits
+        );
+
 
       memoryDisplay.textContent =
         memoryAnswer;
 
-      memoryInput.value = '';
+
+      memoryInput.value =
+        '';
+
 
       memoryResult.textContent =
         'Memorise it...';
 
 
+
       setTimeout(
+
         () => {
+
 
           memoryDisplay.textContent =
             '•••';
 
+
           memoryResult.textContent =
             'Now type the digits.';
 
+
           memoryInput.focus();
 
+
         },
+
         1600
+
       );
+
 
     }
 
 
+
     memoryStartBtn.addEventListener(
+
       'click',
+
       startMemoryGame
+
     );
 
 
-    memoryCheckBtn.addEventListener(
-      'click',
-      () => {
 
-        if(!memoryAnswer){
-          return;
-        }
+    memoryCheckBtn.addEventListener(
+
+      'click',
+
+      () => {
 
 
         if(
-          memoryInput.value.trim() ===
+          !memoryAnswer
+        ){
+
+          return;
+
+        }
+
+
+
+        if(
+          memoryInput
+            .value
+            .trim() ===
           memoryAnswer
         ){
 
-          memoryDigits += 1;
+
+          memoryDigits +=
+            1;
+
 
           memoryLevel.textContent =
             'Level: ' +
             memoryDigits;
 
+
           memoryResult.textContent =
             'Correct. Next round gets harder.';
 
+
           startMemoryGame();
+
 
         }
 
+
         else{
+
 
           memoryResult.textContent =
             'Not quite. The correct answer was ' +
             memoryAnswer +
             '.';
 
-          memoryDigits = 3;
+
+          memoryDigits =
+            3;
+
 
           memoryLevel.textContent =
             'Level: 3';
 
-          memoryAnswer = '';
+
+          memoryAnswer =
+            '';
+
 
           memoryDisplay.textContent =
             '---';
 
+
         }
 
+
       }
+
     );
+
 
 
     memoryInput.addEventListener(
+
       'keydown',
+
       event => {
 
-        if(event.key === 'Enter'){
+
+        if(
+          event.key ===
+          'Enter'
+        ){
+
+
           memoryCheckBtn.click();
+
+
         }
 
+
       }
+
     );
+
 
 
     /* =========================================================
        MENTAL MATH
        ========================================================= */
 
+
     const mathQuestion =
-      document.getElementById('mathQuestion');
+      document.getElementById(
+        'mathQuestion'
+      );
+
 
     const mathInput =
-      document.getElementById('mathInput');
+      document.getElementById(
+        'mathInput'
+      );
+
 
     const mathCheckBtn =
-      document.getElementById('mathCheckBtn');
+      document.getElementById(
+        'mathCheckBtn'
+      );
+
 
     const mathNewBtn =
-      document.getElementById('mathNewBtn');
+      document.getElementById(
+        'mathNewBtn'
+      );
+
 
     const mathResult =
-      document.getElementById('mathResult');
+      document.getElementById(
+        'mathResult'
+      );
+
 
     const mathScore =
-      document.getElementById('mathScore');
+      document.getElementById(
+        'mathScore'
+      );
 
 
-    let currentMathAnswer = 0;
-    let currentMathScore = 0;
+
+    let currentMathAnswer =
+      0;
+
+
+    let currentMathScore =
+      0;
+
 
 
     function newMathQuestion(){
 
+
       const a =
-        Math.floor(Math.random() * 20) + 1;
+        Math.floor(
+          Math.random() *
+          20
+        ) + 1;
+
 
       const b =
-        Math.floor(Math.random() * 20) + 1;
+        Math.floor(
+          Math.random() *
+          20
+        ) + 1;
+
 
       const ops =
-        ['+', '-', '×'];
+        [
+          '+',
+          '-',
+          '×'
+        ];
+
 
       const op =
         ops[
@@ -1685,146 +3001,249 @@
         ];
 
 
-      if(op === '+'){
+
+      if(
+        op ===
+        '+'
+      ){
+
 
         currentMathAnswer =
           a + b;
 
+
         mathQuestion.textContent =
-          a + ' + ' + b;
+          a +
+          ' + ' +
+          b;
+
 
       }
 
-      else if(op === '-'){
+
+      else if(
+        op ===
+        '-'
+      ){
+
 
         const big =
-          Math.max(a, b);
+          Math.max(
+            a,
+            b
+          );
+
 
         const small =
-          Math.min(a, b);
+          Math.min(
+            a,
+            b
+          );
+
 
         currentMathAnswer =
-          big - small;
+          big -
+          small;
+
 
         mathQuestion.textContent =
-          big + ' - ' + small;
+          big +
+          ' - ' +
+          small;
+
 
       }
+
 
       else{
 
+
         const x =
           Math.floor(
-            Math.random() * 12
+            Math.random() *
+            12
           ) + 1;
+
 
         const y =
           Math.floor(
-            Math.random() * 12
+            Math.random() *
+            12
           ) + 1;
 
+
         currentMathAnswer =
-          x * y;
+          x *
+          y;
+
 
         mathQuestion.textContent =
-          x + ' × ' + y;
+          x +
+          ' × ' +
+          y;
+
 
       }
 
 
-      mathInput.value = '';
 
-      mathResult.textContent = '';
+      mathInput.value =
+        '';
+
+
+      mathResult.textContent =
+        '';
+
 
     }
 
 
+
     mathCheckBtn.addEventListener(
+
       'click',
+
       () => {
 
+
         if(
-          mathInput.value.trim() === ''
+          mathInput
+            .value
+            .trim() ===
+          ''
         ){
+
           return;
+
         }
+
 
 
         const user =
-          Number(mathInput.value);
+          Number(
+            mathInput.value
+          );
 
 
-        if(Number.isNaN(user)){
+
+        if(
+          Number.isNaN(
+            user
+          )
+        ){
+
           return;
+
         }
 
 
-        if(user === currentMathAnswer){
 
-          currentMathScore += 1;
+        if(
+          user ===
+          currentMathAnswer
+        ){
+
+
+          currentMathScore +=
+            1;
+
 
           mathScore.textContent =
             'Score: ' +
             currentMathScore;
 
+
           mathResult.textContent =
             'Correct. Nice.';
+
+
 
           setTimeout(
             newMathQuestion,
             350
           );
 
+
         }
 
+
         else{
+
 
           mathResult.textContent =
             'Wrong. Correct answer: ' +
             currentMathAnswer;
 
-          currentMathScore = 0;
+
+          currentMathScore =
+            0;
+
 
           mathScore.textContent =
             'Score: 0';
 
+
         }
 
+
       }
+
     );
+
 
 
     mathNewBtn.addEventListener(
+
       'click',
+
       newMathQuestion
+
     );
+
 
 
     mathInput.addEventListener(
+
       'keydown',
+
       event => {
 
-        if(event.key === 'Enter'){
+
+        if(
+          event.key ===
+          'Enter'
+        ){
+
+
           mathCheckBtn.click();
+
+
         }
 
+
       }
+
     );
 
 
+
     /* =========================================================
-       INITIALISE GAMES
+       INITIALISE
        ========================================================= */
+
 
     setReactionState(
       'ready',
       'Press Start'
     );
 
+
     memoryDisplay.textContent =
       '---';
 
+
     newMathQuestion();
+
 
   </script>
 
